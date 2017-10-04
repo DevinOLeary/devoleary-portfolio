@@ -6,9 +6,11 @@ import Header from './Header';
 class AboutMe extends React.Component {
   render() {
     return(
-      <div>
+      <div className="body-container">
         <Header />
-        <h1>About Me</h1>
+        <hgroup className="flex-container center">
+          <h1>About Me</h1>
+        </hgroup>
       </div>
     );
   }

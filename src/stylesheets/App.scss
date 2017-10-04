@@ -1,3 +1,8 @@
+@import 'vars';
+@import 'layout';
+@import 'style';
+@import 'buttons';
+
 .configs {
   li {
     margin: 15px 0px;
@@ -12,7 +17,4 @@ code {
   background-color: rgba(222, 222, 222, 0.34);
   border: 1px solid #cccccc;
   color: #868686;
-}
-.img-presented {
-  width: 40vw;
 }

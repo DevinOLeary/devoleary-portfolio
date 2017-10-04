@@ -14,7 +14,6 @@ class PhotographyStore {
     .then(res => {
       this.picInfo = res.data
     })
-    .then(console.log(this.picInfo))
     .catch(error => console.log(error))
     }
 

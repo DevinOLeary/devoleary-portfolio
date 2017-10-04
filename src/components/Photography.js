@@ -20,7 +20,7 @@ class Photography extends React.Component{
   render(){
 
     return(
-      <div>
+      <div className="body-container">
         <Header />
         <Route path="/photography" exact component={PhotoCategories}/>
         <Route path="/photography/category_action" exact component={ActionGallery}/>

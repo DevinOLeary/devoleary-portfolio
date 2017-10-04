@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom';
 class PhotoCategories extends React.Component {
   render(){
     return(
-      <section>
+      <section className="flex-container row even-spacing">
         <div>
           <NavLink to="/photography/category_action">
             <h2>Action</h2>

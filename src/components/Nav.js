@@ -5,7 +5,7 @@ class Nav extends React.Component {
   render(){
     return(
       <nav>
-        <ul>
+        <ul className="flex-container nav-bar row">
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/photography">Photography</NavLink></li>
           <li><NavLink to="/dev&design">Development & Design</NavLink></li>

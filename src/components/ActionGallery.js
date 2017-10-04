@@ -8,7 +8,7 @@ class ActionGallery extends React.Component {
   render(){
     return(
       <main>
-        <hgroup>
+        <hgroup className="flex-container center">
           <h1>Action</h1>
         </hgroup>
         <section>

@@ -6,28 +6,33 @@ import {NavLink} from 'react-router-dom';
 @observer
 class TravelGallery extends React.Component {
 
+
+
+
   render(){
     const pics = this.props.store.picInfo;
     const list = pics.map(pic => {
       return (
         <li key={pic.slug}><img className="img-presented" src={pic._embedded['wp:featuredmedia']["0"].source_url}
-        alt={pic.slug}/></li>
+        alt={pic.slug}
+        /></li>
       );
     });
+
+
     return(
       <div>
-        <main className="showGallery">
-          <hgroup>
+        <main>
+          <hgroup className="flex-container center">
             <h1>Travel</h1>
           </hgroup>
-          <section>
-            <h2>Gallery</h2>
+          <section className="flex-container center column">
             <ul>
               {list}
             </ul>
           </section>
-          <NavLink to="/photography"><button>Back To Categories</button></NavLink>
         </main>
+        <NavLink to="/photography"><button>Back To Categories</button></NavLink>
       </div>
     );
   }

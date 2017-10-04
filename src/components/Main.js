@@ -3,7 +3,6 @@ import {Route} from 'react-router-dom';
 
 //components
 import Photography from './Photography';
-import Nav from './Nav';
 import HomePage from './HomePage';
 import DevAndDesign from './DevAndDesign';
 import AboutMe from './AboutMe';

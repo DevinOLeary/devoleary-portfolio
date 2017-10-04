@@ -1,0 +1,50 @@
+//general layout
+.full-width {
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+//containers and flex
+  .flex-container {
+    display: flex;
+  }
+  .center {
+    justify-content: center;
+    align-items: center;
+  }
+  .column {
+    flex-direction: column;
+  }
+  .row {
+    flex-direction: row;
+  }
+  .even-spacing {
+    justify-content: space-around;
+  }
+  .body-container {
+    min-height: 100vh;
+  }
+  .footer-container {
+    height: 200px;
+  }
+
+//elements
+.img-presented {
+  height: 99vh;
+}
+.nav-bar {
+  justify-content: space-around;
+  margin: 2em 10%;
+}
+.header-subpage {
+  height: 130px;
+}
+
+.text-body-read {
+  width: 80%;
+  max-width: 600px;
+}
