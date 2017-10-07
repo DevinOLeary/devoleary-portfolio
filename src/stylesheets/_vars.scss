@@ -1,10 +1,18 @@
 //colors
-$blue: #477297;
+$blue: rgba(38,129,151,1);
+$blue-trans: rgba(38,129,151,.7);
 $white: rgb(255,255,255);
 
 
 //backgrounds
 $background-colored: $blue;
+$background-colored-trans: $blue-trans;
 
 //text
 $text-inverse: $white;
+$title-text: 'Dosis', sans-serif;
+
+
+
+//Imports
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,500');

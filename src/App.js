@@ -10,13 +10,14 @@ import Main from './components/Main';
 import './stylesheets/App.scss';
 
 //stores
-import PhotographyStore from './stores/PhotographyStore';
+import RootStore from './stores/RootStore';
+
 
 
 
 class App extends Component {
   render() {
-      const stores = new PhotographyStore();
+      const stores = new RootStore();
     return (
       <Provider store={stores}>
           <BrowserRouter>

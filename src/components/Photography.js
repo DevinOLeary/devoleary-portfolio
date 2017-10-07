@@ -11,14 +11,12 @@ import TravelGallery from './TravelGallery';
 @inject('store')
 @observer
 class Photography extends React.Component{
-
-  componentWillMount() {
-    return this.props.store.loadImages();
+  constructor(props){
+    super(props);
+    this.props.store.photographyStore.loadImages();
   }
 
-
   render(){
-
     return(
       <div className="body-container">
         <Header />

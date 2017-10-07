@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 
+
 //components
 import Photography from './Photography';
 import HomePage from './HomePage';
@@ -14,7 +15,7 @@ class Main extends React.Component{
   render() {
 
     return (
-        <div>
+        <div className="body-container">
             <Route path="/" exact component={HomePage}/>
             <Route path="/photography" component={Photography}/>
             <Route path="/dev&design" component={DevAndDesign}/>

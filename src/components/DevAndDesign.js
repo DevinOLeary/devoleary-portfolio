@@ -1,17 +1,31 @@
 import React from 'react';
+import {inject, observer} from 'mobx-react';
 
 //components
 import Header from './Header';
+import ProjectList from './small_components/ProjectList'
 
+@inject('store')
+@observer
 class DevAndDesign extends React.Component {
+  constructor(props){
+    super(props);
+    this.props.store.projectStore.loadProjects()
+  }
   render() {
+    const {projectInfo} = this.props.store.projectStore;
+    if(projectInfo.length === 0) {return null;}
+    console.log(projectInfo)
     return(
       <div className="body-container">
         <Header />
-        <hgroup className="flex-container center column">
-          <h1>Development and Design</h1>
-          <h2>Examples</h2>
-        </hgroup>
+        <section>
+          <ProjectList info={projectInfo} category="Development"/>
+        </section>
+        <hr/>
+        <section>
+          <ProjectList info={projectInfo} category="Design"/>
+        </section>
       </div>
     );
   }

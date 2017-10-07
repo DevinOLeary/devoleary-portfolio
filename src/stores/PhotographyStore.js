@@ -9,6 +9,7 @@ class PhotographyStore {
   }
 
   @action loadImages(){
+    this.picInfo = []
     let dataUrl = 'http://localhost:8888/wordpress/wp-json/wp/v2/photos?_embed';
     return axios.get(dataUrl)
     .then(res => {
@@ -17,8 +18,8 @@ class PhotographyStore {
     .catch(error => console.log(error))
     }
 
-}
 
+}
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {observer, inject} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 import {NavLink} from 'react-router-dom';
 
 @inject('store')
@@ -8,21 +8,22 @@ class TravelGallery extends React.Component {
 
 
 
-
   render(){
-    const pics = this.props.store.picInfo;
+    const pics = this.props.store.photographyStore.picInfo;
     const list = pics.map(pic => {
-      return (
-        <li key={pic.slug}><img className="img-presented" src={pic._embedded['wp:featuredmedia']["0"].source_url}
-        alt={pic.slug}
-        /></li>
-      );
+      if(pic.acf.photo_category === "travel") {
+        return (
+          <li key={pic.slug}><img className="img-presented" src={pic._embedded['wp:featuredmedia']["0"].source_url}
+          alt={pic.slug}
+          /></li>
+        );
+      }
     });
 
 
     return(
       <div>
-        <main>
+        <main className="body-container">
           <hgroup className="flex-container center">
             <h1>Travel</h1>
           </hgroup>

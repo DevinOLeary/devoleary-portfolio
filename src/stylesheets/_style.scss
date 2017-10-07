@@ -1,3 +1,20 @@
+//text
+h1, h2, h3, h4, h5 {
+  font-family: $title-text;
+  font-weight: 300;
+}
+h1 {
+  font-size: 64px;
+}
+h2 {
+  font-size: 48px;
+}
+h3 {
+  font-size: 36px;
+}
+h4 {
+  font-size: 24px;
+}
 ul, li {
   list-style-type: none;
   padding: 0;
@@ -17,5 +34,12 @@ a {
   background-color: $background-colored;
 }
 .footer-container {
+  background-color: $background-colored;
+}
+
+.project_text-container {
+  background-color: $background-colored-trans;
+}
+.background-colored {
   background-color: $background-colored;
 }
