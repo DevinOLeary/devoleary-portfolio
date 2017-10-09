@@ -5,8 +5,8 @@ import {Route} from 'react-router-dom';
 //components
 import Header from './Header';
 import PhotoCategories from './PhotoCategories';
-import ActionGallery from './ActionGallery';
-import TravelGallery from './TravelGallery';
+import PicGallery from './presentational-components/PicGallery';
+
 
 @inject('store')
 @observer
@@ -16,13 +16,14 @@ class Photography extends React.Component{
     this.props.store.photographyStore.loadImages();
   }
 
+
   render(){
     return(
       <div className="body-container">
         <Header />
         <Route path="/photography" exact component={PhotoCategories}/>
-        <Route path="/photography/category_action" exact component={ActionGallery}/>
-        <Route path="/photography/category_travel" exact component={TravelGallery}/>
+        <Route path="/photography/category_action" exact render={(props) => (<PicGallery  title="Action"/>)}/>
+        <Route path="/photography/category_travel" exact render={(props) => (<PicGallery  title="Travel"/>)}/>
       </div>
     );
   }

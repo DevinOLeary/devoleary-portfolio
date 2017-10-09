@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 
 //components
-import PicCategory from './small_components/PicCategory';
+import PicCategory from './presentational-components/PicCategory';
 
 
 @inject('store')

@@ -12,6 +12,7 @@ h1,h2,h3,h4,h5 {
   margin: 0;
   padding: 0;
 }
+
 //containers and flex
   .flex-container {
     display: flex;
@@ -41,10 +42,15 @@ h1,h2,h3,h4,h5 {
   .project_item-container {
     display: flex;
     min-height: 300px;
+    width: 40vw;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 10%;
   }
   .project_text-container {
-    position: relative;
-    right: 150px;
+    position: absolute;
+    right: -120px;
     top: 80px;
     min-width: 300px;
     height:200px;
@@ -57,7 +63,8 @@ h1,h2,h3,h4,h5 {
 //elements
 //Images
 .img-presented {
-  width: 90vw;
+  width: 80vw;
+  margin: 20px 0;
 }
 .img-categories {
   width: 45vw;
@@ -74,6 +81,10 @@ h1,h2,h3,h4,h5 {
 }
 .header-subpage {
   height: 130px;
+}
+
+.mini-block{
+  min-height: 200px;
 }
 //text
 

@@ -3,7 +3,7 @@ import {inject, observer} from 'mobx-react';
 
 //components
 import Header from './Header';
-import ProjectList from './small_components/ProjectList'
+import ProjectList from './presentational-components/ProjectList'
 
 @inject('store')
 @observer
@@ -12,20 +12,22 @@ class DevAndDesign extends React.Component {
     super(props);
     this.props.store.projectStore.loadProjects()
   }
+
+
   render() {
     const {projectInfo} = this.props.store.projectStore;
-    if(projectInfo.length === 0) {return null;}
-    console.log(projectInfo)
     return(
-      <div className="body-container">
-        <Header />
-        <section>
-          <ProjectList info={projectInfo} category="Development"/>
-        </section>
-        <hr/>
-        <section>
-          <ProjectList info={projectInfo} category="Design"/>
-        </section>
+      <div>
+        <main className="body-container">
+          <Header />
+          <section>
+            <ProjectList info={projectInfo} category="Development"/>
+          </section>
+          <hr/>
+          <section>
+            <ProjectList info={projectInfo} category="Design"/>
+          </section>
+        </main>
       </div>
     );
   }
