@@ -1,0 +1,13 @@
+a:hover {
+  cursor: pointer;
+}
+.button-secondary {
+  padding: 20px;
+  background-color: $background-white;
+  border: 3px solid $background-colored;
+  font-size: 18px;
+  color: $text-default;
+}
+button:hover {
+  cursor: pointer;
+}

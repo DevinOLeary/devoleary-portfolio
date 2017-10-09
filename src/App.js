@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
+import {Provider} from 'mobx-react';
+import {BrowserRouter} from 'react-router-dom';
 
 
 //components
 import Main from './components/Main';
 
 //styles
-import './App.scss';
+import './stylesheets/App.scss';
+
+//stores
+import RootStore from './stores/RootStore';
 
 
-//modules
 
 
 class App extends Component {
   render() {
+      const stores = new RootStore();
     return (
-      <div className="App">
-        <Main />
-      </div>
+      <Provider store={stores}>
+          <BrowserRouter>
+            <Main/>
+          </BrowserRouter>
+        </Provider>
     );
   }
 }

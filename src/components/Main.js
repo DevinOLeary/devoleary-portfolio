@@ -1,38 +1,26 @@
 import React from 'react';
-import axios from 'axios';
+import {Route} from 'react-router-dom';
 
+
+//components
+import Photography from './Photography';
+import HomePage from './HomePage';
+import DevAndDesign from './DevAndDesign';
+import AboutMe from './AboutMe';
+import Footer from './Footer';
 
 
 class Main extends React.Component{
-  constructor(){
-    super();
-    this.state = {
-      pictures: []
-    }
-  }
-
-  componentDidMount() {
-    let dataUrl = 'http://localhost:8888/wordpress/wp-json/wp/v2/photos?_embed';
-    axios.get(dataUrl)
-    .then(res => {
-      this.setState({
-        pictures: res.data
-      })
-    })
-    }
 
   render() {
-    const pictures = this.state.pictures.map((pic) => {
-      return(
-        <li key={pic.date}>{pic.slug}</li>
-      )
-    });
+
     return (
-        <div>
-          <h1>Portfolio</h1>
-          <ul>
-            {pictures}
-          </ul>
+        <div className="body-container">
+            <Route path="/" exact component={HomePage}/>
+            <Route path="/photography" component={Photography}/>
+            <Route path="/dev&design" component={DevAndDesign}/>
+            <Route path="/about" component={AboutMe}/>
+            <Footer />
         </div>
     );
 
