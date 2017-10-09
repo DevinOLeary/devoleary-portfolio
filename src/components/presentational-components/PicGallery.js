@@ -5,23 +5,37 @@ import {observer,inject} from 'mobx-react';
 @inject('store')
 @observer
 class PicGallery extends React.Component {
-
-  componentDidMount(){
+  constructor(props){
+    super(props);
     this.props.store.photographyStore.page = this.props.title.toLowerCase();
   }
 
+
   render(){
-    if(this.props.pics.length === 0){
+    const {picSort, locationMap} = this.props.store.photographyStore;
+    if(locationMap.size === 0){
       return null;
     }
-    console.log(this.props.pics);
-    const pics = this.props.pics;
-    const list = pics.map(pic => {
-      return (
-        <li key={pic.slug}><img className="img-presented" src={pic._embedded['wp:featuredmedia']["0"].source_url}
-        alt={pic.slug}
-        /></li>
-      );
+    // console.log(locationMap);
+    // locationMap.forEach(function(value){
+    //   return console.log(value.map(pic => pic.acf.photo_category))
+    // });
+
+    const list = [];
+    let locationHeader = null;
+    locationMap.forEach(function(value, key){
+      if(key !== locationHeader){
+        list.push(<h2 key={key}>{key}</h2>);
+      }
+      list.push(value.map(pic => (
+        <li key={pic.id}>
+          <img
+          className="img-presented"
+          src={pic._embedded['wp:featuredmedia']["0"].source_url}
+          alt={pic.acf.photo_description}/>
+        </li>
+      )));
+      locationHeader = key;
     });
     return(
       <div>

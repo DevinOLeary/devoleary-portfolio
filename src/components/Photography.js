@@ -22,8 +22,8 @@ class Photography extends React.Component{
       <div className="body-container">
         <Header />
         <Route path="/photography" exact component={PhotoCategories}/>
-        <Route path="/photography/category_action" exact render={(props) => (<PicGallery  title="Action"/>)}/>
-        <Route path="/photography/category_travel" exact render={(props) => (<PicGallery  title="Travel"/>)}/>
+        <Route path="/photography/category_action" exact render={(props) => (<PicGallery title="Action"/>)}/>
+        <Route path="/photography/category_travel" exact render={(props) => (<PicGallery title="Travel"/>)}/>
       </div>
     );
   }

@@ -4,8 +4,6 @@ import axios from 'axios';
 class PhotographyStore {
 
   @observable picInfo = []
-  @observable travelGallery = []
-  @observable actionGallery = []
   @observable page = ""
 
 
@@ -20,22 +18,11 @@ class PhotographyStore {
     }
 
   @computed get picSort(){
-    const picPage = this.picInfo.filter((pic) => {
-      return pic.acf.photo_category === this.page
-    })
-    if(this.page === 'action'){
-      return this.actionGallery = picPage;
-    } else if(this.page === 'travel'){
-      return this.travelGallery = picPage;
-    }
-  }
-
-  @computed get groupedByTravelLocation(){
-    console.log('change');
-    const travelList = this.travelGallery
+    const page = this.page;
+    const newPics = this.picInfo.filter((pic) => (pic.acf.photo_category.toLowerCase() === page))
     const keyGetter = (pic) => (pic.acf.photo_location);
     const map = new Map();
-    travelList.forEach((item) => {
+    newPics.forEach((item) => {
       const key = keyGetter(item);
       const collection = map.get(key);
       if(!collection){
@@ -44,24 +31,25 @@ class PhotographyStore {
         collection.push(item)
       }
     });
-    return this.travelGallery = map;
+    return this.locationMap = map;
   }
 
-    @computed get groupedByActionLocation(){
-      const actionList = this.actionGallery
-      const keyGetter = (pic) => (pic.acf.photo_location);
-      const map = new Map();
-      actionList.forEach((item) => {
-        const key = keyGetter(item);
-        const collection = map.get(key);
-        if(!collection){
-          map.set(key, [item]);
-        } else {
-          collection.push(item)
-        }
-      });
-      return this.actionGallery = map;
-    }
+  // @computed get groupByLocation(){
+  //   console.log('change');
+  //   const picList = this.picInfo
+  //   const keyGetter = (pic) => (pic.acf.photo_location);
+  //   const map = new Map();
+  //   picList.forEach((item) => {
+  //     const key = keyGetter(item);
+  //     const collection = map.get(key);
+  //     if(!collection){
+  //       map.set(key, [item]);
+  //     } else {
+  //       collection.push(item)
+  //     }
+  //   });
+  //   return this.locationMap = map;
+  // }
 
 
 
