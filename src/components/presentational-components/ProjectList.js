@@ -1,8 +1,12 @@
 import React from 'react';
+import ProjectInfo from './ProjectInfo';
+
+
 
 const ProjectList = (props) => {
-  if(props.info.length === 0){return null}
-  const itemList = props.info.map(dev => {
+  if(props.projectInfo.length === 0){return null}
+  const itemList = props.projectInfo.map(dev => {
+    const title = dev.title.rendered;
     if(dev.acf.category === props.category){
       return (
         <li key={dev.id}>
@@ -10,10 +14,12 @@ const ProjectList = (props) => {
             <img className="img-project_preview" src={dev._embedded['wp:featuredmedia']["0"].source_url}
             alt={dev.slug}/>
             <article className="project_text-container text-inverse">
-              <h2>{dev.title.rendered}</h2>
+              <h2>{title}</h2>
               <h5>{dev.acf.description}</h5>
+              <button onClick={props.isOpen.bind(this, dev.id)}>open</button>
             </article>
           </div>
+          <ProjectInfo info={dev} state={props.activeProject}/>
         </li>
       )
     } else{ return ''}

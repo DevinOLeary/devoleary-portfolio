@@ -12,20 +12,28 @@ class DevAndDesign extends React.Component {
     super(props);
     this.props.store.projectStore.loadProjects()
   }
+  componentWillMount(){
+    this.props.store.projectStore.activeProject = ''
+  }
 
+
+  isOpen = (id) => {
+    this.props.store.projectStore.activeProject = id.toString();
+  };
 
   render() {
-    const {projectInfo} = this.props.store.projectStore;
+    const {projectInfo, activeProject} = this.props.store.projectStore;
+    let props = {projectInfo, activeProject}
     return(
       <div>
         <main className="body-container">
           <Header />
           <section>
-            <ProjectList info={projectInfo} category="Development"/>
+            <ProjectList {...props} isOpen={this.isOpen} category="Development"/>
           </section>
           <hr/>
           <section>
-            <ProjectList info={projectInfo} category="Design"/>
+            <ProjectList {...props} isOpen={this.isOpen} category="Design"/>
           </section>
         </main>
       </div>

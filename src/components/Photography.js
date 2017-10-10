@@ -5,7 +5,7 @@ import {Route} from 'react-router-dom';
 //components
 import Header from './Header';
 import PhotoCategories from './PhotoCategories';
-import PicGallery from './presentational-components/PicGallery';
+import PicGallery from './PicGallery';
 
 
 @inject('store')

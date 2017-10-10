@@ -75,10 +75,32 @@ h1,h2,h3,h4,h5 {
   min-width: 400px;
   min-height: 300px;
 }
+//Nav
 .nav-bar {
   justify-content: space-around;
   margin: 2em 10%;
 }
+
+.nav-side{
+  position: fixed;
+  right:0px;
+  bottom:30vh;
+  transform: rotateZ(270deg);
+  height: 10px;
+  aside{
+    position: absolute;
+    bottom: 15px;
+    ul{
+      a{
+        padding: 1em 0;
+        text-align:center;
+        width: 100px;
+      }
+  }
+  }
+}
+
+
 .header-subpage {
   height: 130px;
 }
@@ -96,4 +118,11 @@ h1,h2,h3,h4,h5 {
 .text-body_read {
   width: 80%;
   max-width: 600px;
+}
+
+.show {
+  height: 400px;
+}
+.hide {
+  height: 0px;
 }

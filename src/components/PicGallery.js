@@ -1,6 +1,10 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {observer,inject} from 'mobx-react';
+import Scroll, {Element} from 'react-scroll';
+
+//components
+import SideMenu from './presentational-components/SideMenu';
 
 @inject('store')
 @observer
@@ -16,16 +20,11 @@ class PicGallery extends React.Component {
     if(locationMap.size === 0){
       return null;
     }
-    // console.log(locationMap);
-    // locationMap.forEach(function(value){
-    //   return console.log(value.map(pic => pic.acf.photo_category))
-    // });
-
     const list = [];
     let locationHeader = null;
     locationMap.forEach(function(value, key){
       if(key !== locationHeader){
-        list.push(<h2 key={key}>{key}</h2>);
+        list.push(<Element name={key} key={key}><h2>{key}</h2></Element>);
       }
       list.push(value.map(pic => (
         <li key={pic.id}>
@@ -36,6 +35,10 @@ class PicGallery extends React.Component {
         </li>
       )));
       locationHeader = key;
+    });
+    const menuMap = []
+    locationMap.forEach(function(value, key){
+      return menuMap.push(key);
     });
     return(
       <div>
@@ -52,6 +55,9 @@ class PicGallery extends React.Component {
         <div className="flex-container center mini-block">
           <NavLink to="/photography"><button className="button-secondary">Back To Categories</button></NavLink>
         </div>
+        <section className="nav-side">
+          <SideMenu menu={menuMap} allPics={picSort}/>
+        </section>
       </div>
     );
   }
