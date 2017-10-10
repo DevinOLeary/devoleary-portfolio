@@ -2,11 +2,8 @@ import {observable, action} from 'mobx';
 import axios from 'axios';
 
 class ProjectStore {
-  @observable projectInfo
-
-  constructor() {
-    this.projectInfo = []
-  }
+  @observable projectInfo = []
+  @observable activeProject = ''
 
   @action loadProjects(){
     this.picInfo = []

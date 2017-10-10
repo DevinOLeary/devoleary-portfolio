@@ -34,23 +34,6 @@ class PhotographyStore {
     return this.locationMap = map;
   }
 
-  // @computed get groupByLocation(){
-  //   console.log('change');
-  //   const picList = this.picInfo
-  //   const keyGetter = (pic) => (pic.acf.photo_location);
-  //   const map = new Map();
-  //   picList.forEach((item) => {
-  //     const key = keyGetter(item);
-  //     const collection = map.get(key);
-  //     if(!collection){
-  //       map.set(key, [item]);
-  //     } else {
-  //       collection.push(item)
-  //     }
-  //   });
-  //   return this.locationMap = map;
-  // }
-
 
 
 //end of store

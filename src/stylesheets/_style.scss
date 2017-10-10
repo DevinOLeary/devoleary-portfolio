@@ -39,6 +39,8 @@ a {
   color: $text-inverse;
 }
 
+//elements
+
 .header-subpage {
   background-color: $background-colored;
 }
@@ -51,4 +53,12 @@ a {
 }
 .background-colored {
   background-color: $background-colored;
+}
+
+.nav-side {
+ a {
+   background-color: $background-colored;
+   color: inherit;
+   border-left: 2px solid $background-white;
+ }
 }

@@ -5,6 +5,7 @@ import {BrowserRouter} from 'react-router-dom';
 
 //components
 import Main from './components/Main';
+import ScrollToTop from './components/ScrollToTop';
 
 //styles
 import './stylesheets/App.scss';
@@ -21,7 +22,9 @@ class App extends Component {
     return (
       <Provider store={stores}>
           <BrowserRouter>
-            <Main/>
+            <ScrollToTop>
+              <Main/>
+            </ScrollToTop>
           </BrowserRouter>
         </Provider>
     );
