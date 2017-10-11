@@ -5,13 +5,18 @@
 
 body {
   height: 100%;
+  width:100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
+
 h1,h2,h3,h4,h5 {
   margin: 0;
   padding: 0;
 }
+
+
 
 //containers and flex
   .flex-container {
@@ -58,6 +63,10 @@ h1,h2,h3,h4,h5 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+  .timeline-container {
+    width: 100%;
+    overflow-x: scroll;
   }
 
 //elements
@@ -120,9 +129,15 @@ h1,h2,h3,h4,h5 {
   max-width: 600px;
 }
 
-.show {
-  height: 400px;
+.timeline-body {
+  width:70%;
+  margin: 0 15%;
+  min-width: 600px;
 }
-.hide {
-  height: 0px;
+
+// .timeline-body:first-child{
+//   margin-left: 30%;
+// }
+.timeline-body:last-child{
+  margin-right: 100%;
 }
