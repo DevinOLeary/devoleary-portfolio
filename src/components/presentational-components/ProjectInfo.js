@@ -1,21 +1,27 @@
 import React from 'react';
-import Scroll, {Element, Link} from 'react-scroll';
+import {Link} from 'react-scroll';
+
+//components
+import Content from './SliderContent';
 
 const ProjectInfo = (props) => {
-  const content = ''
+  const info = props.info.acf;
+
+console.log(info);
   if(props.info.id.toString() === props.state){
-      return this.content = (
-        <div>
-          <Link to={props.info.title.rendered} smooth={true}><button onClick={props.closeProject}>close</button></Link>
-          <Element name={props.info.id.toString()}><h2>{props.info.title.rendered}</h2></Element>
+    return (
+      <section className="project-pane" id={props.info.id}>
+        <Link to={props.info.title.rendered} smooth={true}>
+          <button onClick={props.closeProject}>close</button>
+        </Link>
+        <h2 className='text-center text-inverse'>{props.info.title.rendered}</h2>
+        <br/>
+        <div className="flex-container center">
+          <Content info={info}/>
         </div>
-      )
-    }
-  return (
-    <section className="project-pane" id={props.info.id}>
-      {content}
-    </section>
-  );
+      </section>
+    );
+  } else {return null}
 }
 
 export default ProjectInfo;

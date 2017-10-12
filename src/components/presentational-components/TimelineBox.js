@@ -1,23 +1,28 @@
 import React from 'react';
 
-const timelineBox = (props) => {
-  if(props.timeline.length === 0){return null}
-  const timelineList = props.timeline.map(time => (
-    <td key={time.id} className="timeline-body">
-      <h3>{time.acf.date_range}</h3>
-      <h2>{time.acf.time_title}</h2>
-      <p>{time.acf.time_description}</p>
-    </td>
-  ))
+
+const TimelineBox = (props) => {
+  if(props.timelineInfo.length === 0){return null}
+  const info = props.activeTimePeriod;
+  let timeBody = null;
+  if (info.length > 0){
+    timeBody = (
+      <article>
+        <h2>{info[0].acf.time_title}</h2>
+        <h4>{info[0].acf.date_range}</h4>
+        <p>{info[0].acf.time_description}</p>
+      </article>
+    )
+  }
   return (
-    <table className="flex-container center">
-      <tbody className="timeline-container">
-        <tr className="flex-container row">
-          {timelineList}
-        </tr>
-      </tbody>
-    </table>
+    <tbody className="timeline-container">
+      <tr>
+        <td>
+          {timeBody}
+        </td>
+      </tr>
+    </tbody>
   );
 }
 
-export default timelineBox;
+export default TimelineBox;

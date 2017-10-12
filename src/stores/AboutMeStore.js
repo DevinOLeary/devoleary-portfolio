@@ -1,8 +1,9 @@
-import {observable, action} from 'mobx';
+import {observable, action, computed} from 'mobx';
 import axios from 'axios';
 
 class AboutMeStore{
   @observable timelineInfo = []
+  @observable timePeriodId = ''
 
 
   @action loadTimeline(){
@@ -14,6 +15,12 @@ class AboutMeStore{
     })
     .catch(error => console.log(error))
     }
+
+  @computed get activeTimePeriod(){
+    return this.timelineInfo.filter((info) => (
+      info.id.toString() === this.timePeriodId
+    ));
+  }
 
 
 }

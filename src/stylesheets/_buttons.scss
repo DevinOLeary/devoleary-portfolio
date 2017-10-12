@@ -4,10 +4,31 @@ a:hover {
 .button-secondary {
   padding: 20px;
   background-color: $background-white;
-  border: 3px solid $background-colored;
+  border: 3px solid $background-secondary;
   font-size: 18px;
   color: $text-default;
 }
 button:hover {
   cursor: pointer;
+}
+
+.button-action {
+  background-color: $button-red;
+  color: inherit;
+  box-shadow: -1px 0 2px $background-grey;
+  transition: .3s;
+}
+.button-action:hover {
+  background-color: $button-red-hover;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: $background-white;
+  font-size: 36px;
+}
+.slick-prev {
+  left: -50px;
+}
+.slick-next {
+  right: -50px;
 }

@@ -1,15 +1,12 @@
 import React from 'react';
-import Scroll, {Link} from 'react-scroll';
+import {Link} from 'react-scroll';
 
 const SideMenu = (props) => {
 
   const menuList = props.menu.reverse().map(item => {
     return(
-      <Link to={item} key={item} smooth={true}>
-        <ul>
+      <Link to={item} key={item} smooth={true} className="button-action">
           <li>{item}</li>
-
-        </ul>
       </Link>
     );
   });

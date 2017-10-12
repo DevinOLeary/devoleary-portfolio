@@ -32,11 +32,13 @@ class DevAndDesign extends React.Component {
         <main className="body-container">
           <Header />
           <section>
-            <ProjectList {...props} isOpen={this.isOpen} closeProject={this.closeProject} category="Development"/>
+            <ProjectList {...props} isOpen={this.isOpen}
+            closeProject={this.closeProject} category="Development"/>
           </section>
-          <hr/>
+          <br/>
           <section>
-            <ProjectList {...props} isOpen={this.isOpen} closeProject={this.closeProject} category="Design"/>
+            <ProjectList {...props} isOpen={this.isOpen}
+            closeProject={this.closeProject} category="Design"/>
           </section>
         </main>
       </div>

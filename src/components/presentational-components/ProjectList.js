@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectInfo from './ProjectInfo';
-import Scroll, {Link, Element} from 'react-scroll';
+import {Link, Element} from 'react-scroll';
 
 
 const ProjectList = (props) => {
@@ -19,7 +19,9 @@ const ProjectList = (props) => {
               <Link to={dev.id.toString()} smooth={true}><button onClick={props.isOpen.bind(this, dev.id)}>open</button></Link>
             </article>
           </div>
-          <ProjectInfo info={dev} state={props.activeProject} closeProject={props.closeProject}/>
+          <Element name={dev.id.toString()}>
+            <ProjectInfo info={dev} state={props.activeProject} closeProject={props.closeProject}/>
+          </Element>
         </li>
       )
     } else{ return ''}

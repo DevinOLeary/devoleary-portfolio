@@ -42,23 +42,25 @@ a {
 //elements
 
 .header-subpage {
-  background-color: $background-colored;
+  background-color: $background-primary;
 }
 .footer-container {
-  background-color: $background-colored;
+  background-color: $background-primary;
 }
 
 .project_text-container {
-  background-color: $background-colored-trans;
+  background-color: $background-primary-trans;
+  box-shadow: 0px 1px 1px $background-grey;
+}
+.project-pane {
+  background-color: $background-primary-trans;
 }
 .background-colored {
-  background-color: $background-colored;
+  background-color: $background-primary;
 }
 
 .nav-side {
  a {
-   background-color: $background-colored;
-   color: inherit;
-   border-left: 2px solid $background-white;
+   margin: .2em;
  }
 }
