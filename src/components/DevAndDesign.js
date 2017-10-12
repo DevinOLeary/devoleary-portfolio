@@ -20,6 +20,9 @@ class DevAndDesign extends React.Component {
   isOpen = (id) => {
     this.props.store.projectStore.activeProject = id.toString();
   };
+  closeProject = () => {
+    this.props.store.projectStore.activeProject = '';
+  }
 
   render() {
     const {projectInfo, activeProject} = this.props.store.projectStore;
@@ -29,11 +32,13 @@ class DevAndDesign extends React.Component {
         <main className="body-container">
           <Header />
           <section>
-            <ProjectList {...props} isOpen={this.isOpen} category="Development"/>
+            <ProjectList {...props} isOpen={this.isOpen}
+            closeProject={this.closeProject} category="Development"/>
           </section>
-          <hr/>
+          <br/>
           <section>
-            <ProjectList {...props} isOpen={this.isOpen} category="Design"/>
+            <ProjectList {...props} isOpen={this.isOpen}
+            closeProject={this.closeProject} category="Design"/>
           </section>
         </main>
       </div>

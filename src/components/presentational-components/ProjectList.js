@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectInfo from './ProjectInfo';
-
+import {Link, Element} from 'react-scroll';
 
 
 const ProjectList = (props) => {
@@ -11,15 +11,17 @@ const ProjectList = (props) => {
       return (
         <li key={dev.id}>
           <div className="project_item-container">
-            <img className="img-project_preview" src={dev._embedded['wp:featuredmedia']["0"].source_url}
-            alt={dev.slug}/>
+            <Element name={dev.title.rendered} ><img className="img-project_preview" src={dev._embedded['wp:featuredmedia']["0"].source_url}
+            alt={dev.slug}/></Element>
             <article className="project_text-container text-inverse">
               <h2>{title}</h2>
               <h5>{dev.acf.description}</h5>
-              <button onClick={props.isOpen.bind(this, dev.id)}>open</button>
+              <Link to={dev.id.toString()} smooth={true}><button onClick={props.isOpen.bind(this, dev.id)}>open</button></Link>
             </article>
           </div>
-          <ProjectInfo info={dev} state={props.activeProject}/>
+          <Element name={dev.id.toString()}>
+            <ProjectInfo info={dev} state={props.activeProject} closeProject={props.closeProject}/>
+          </Element>
         </li>
       )
     } else{ return ''}

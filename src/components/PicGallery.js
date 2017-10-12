@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {observer,inject} from 'mobx-react';
-import Scroll, {Element} from 'react-scroll';
+import {Element} from 'react-scroll';
 
 //components
 import SideMenu from './presentational-components/SideMenu';

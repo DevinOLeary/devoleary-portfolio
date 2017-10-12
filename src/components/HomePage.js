@@ -16,7 +16,7 @@ class HomePage extends React.Component {
         <main>
           <section>
             <article className="flex-container center full-width">
-              <p className="text-body_read ">Cornhole forage food truck, bespoke brunch meggings organic.
+              <p className="content-body_read">Cornhole forage food truck, bespoke brunch meggings organic.
               Williamsburg intelligentsia man bun, yuccie bicycle rights woke
               cloud bread pickled schlitz truffaut. Wolf taiyaki air plant
               narwhal retro irony pinterest tattooed hoodie man braid lumbersexual. </p>

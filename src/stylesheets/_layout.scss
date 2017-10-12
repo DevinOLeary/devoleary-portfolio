@@ -5,13 +5,18 @@
 
 body {
   height: 100%;
+  width:100%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
+
 h1,h2,h3,h4,h5 {
   margin: 0;
   padding: 0;
 }
+
+
 
 //containers and flex
   .flex-container {
@@ -58,6 +63,15 @@ h1,h2,h3,h4,h5 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index:10;
+  }
+  .project-pane {
+    padding-bottom: 3em;
+  }
+  .timeline-container {
+    width: 50%;
+    height:60vh;
+    overflow-x: auto;
   }
 
 //elements
@@ -115,14 +129,19 @@ h1,h2,h3,h4,h5 {
   text-align: left;
 }
 
-.text-body_read {
+.content-body_read {
   width: 80%;
   max-width: 600px;
 }
 
-.show {
-  height: 400px;
+.timeline-body {
+  width:70%;
+  margin: 0 15%;
+  min-width: 600px;
 }
-.hide {
-  height: 0px;
+.timeline-header {
+  padding: 1em;
+}
+.timeline-body:first-child{
+  margin-left:0px;
 }
