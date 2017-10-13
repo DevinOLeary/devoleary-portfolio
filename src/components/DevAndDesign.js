@@ -2,7 +2,6 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 
 //components
-import Header from './Header';
 import ProjectList from './presentational-components/ProjectList'
 
 @inject('store')
@@ -30,7 +29,6 @@ class DevAndDesign extends React.Component {
     return(
       <div>
         <main className="body-container">
-          <Header />
           <section>
             <ProjectList {...props} isOpen={this.isOpen}
             closeProject={this.closeProject} category="Development"/>

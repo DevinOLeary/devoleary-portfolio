@@ -1,0 +1,26 @@
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: all 800ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transition: 800ms;
+  transition-delay: 300ms;
+}
+.fade-exit-active {
+  opacity: 0;
+}
+
+.object-fade {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0}
+  100% {opacity: 1}
+}
