@@ -22,7 +22,7 @@ const Main = withRouter(({location}) => (
         mountOnEnter={true}
         unmountOnExit={true}
         classNames="fade"
-        timeout={1000}>
+        timeout={1200}>
           <Switch location={location}>
               <Route path="/" exact component={HomePage}/>
               <Route path="/photography" component={Photography}/>

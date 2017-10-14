@@ -32,11 +32,21 @@ class AboutMe extends React.Component {
         <table className="flex-container center column">
           <TimelineHeader {...props} loadTime={this.loadTime}/>
           <TimelineBox {...props}>
-            {timelineInfo > 0 &&
-            active > 0 &&
+            {timelineInfo.length > 0 &&
+            active.length > 0 ?
             <article>
-              <h2>test</h2>
+              <h2>{active[0].acf.time_title}</h2>
+              <h4>{active[0].acf.date_range}</h4>
+              <p>{active[0].acf.time_description}</p>
             </article>
+            : <article>
+                <p>Everyday carry normcore hammock flannel, live-edge vaporware
+                freegan pug 8-bit single-origin coffee hell of meh DIY lyft.
+                Pok pok craft beer post-ironic vice, williamsburg swag shaman
+                 helvetica hexagon. Deep v seitan brunch vexillologist,
+                 authentic ugh jean shorts single-origin coffee art party
+                 trust fund unicorn succulents ethical plaid cornhole. </p>
+              </article>
           }
           </TimelineBox>
         </table>

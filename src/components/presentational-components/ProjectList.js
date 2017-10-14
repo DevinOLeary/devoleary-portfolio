@@ -1,10 +1,10 @@
 import React from 'react';
-import ProjectInfo from './ProjectInfo';
 import {Link, Element} from 'react-scroll';
 import {TransitionGroup} from 'react-transition-group';
 
 //components
 import Content from './SliderContent';
+import ContentFadeIn from '../small-components/ContentFadeIn';
 
 
 const ProjectList = (props) => {
@@ -26,7 +26,7 @@ const ProjectList = (props) => {
           <Element name={dev.id.toString()}>
             <TransitionGroup>
               {dev.id.toString() === props.activeProject &&
-                <ProjectInfo>
+                <ContentFadeIn styleProp='fade'>
                   <section className="project-pane" id={dev.id}>
                     <Link to={dev.title.rendered} smooth={true}>
                       <button onClick={props.closeProject}>close</button>
@@ -37,7 +37,7 @@ const ProjectList = (props) => {
                       <Content info={dev.acf}/>
                     </div>
                   </section>
-                </ProjectInfo>
+                </ContentFadeIn>
               }
             </TransitionGroup>
           </Element>

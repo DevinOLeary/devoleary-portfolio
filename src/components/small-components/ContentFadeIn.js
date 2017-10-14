@@ -2,15 +2,15 @@ import React from 'react';
 import {CSSTransition} from 'react-transition-group';
 
 
-const ProjectInfo = ({children, ...props}) => {
+const ContentFadeIn = ({children, ...props}) => {
   return (
     <CSSTransition
     {...props}
     timeout={1000}
-    classNames='fade'>
+    classNames={props.styleProp}>
       {children}
     </CSSTransition>
   );
 }
 
-export default ProjectInfo;
+export default ContentFadeIn;
