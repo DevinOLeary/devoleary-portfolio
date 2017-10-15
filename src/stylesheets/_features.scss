@@ -1,0 +1,36 @@
+.divider-colored {
+  border-color: $background-primary;
+  background-color: $background-primary;
+  width: 30%;
+  border-style: solid;
+  height: 1px;
+}
+.dash-vertical {
+  transform: rotateZ(90deg);
+  border-color: $background-primary;
+  background-color: $background-primary;
+  width: 30%;
+  border-style: solid;
+  height: 1px;
+  margin: 20px;
+}
+.headshot {
+  height: 300px;
+  width: auto;
+  border-radius: 200px;
+  margin-top: 100px;
+  z-index: 100;
+  box-shadow: 0px 0px 5px;
+  align-self: flex-end;
+}
+.triangle-background {
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 0 0 90vh 70vw;
+border-color: transparent transparent $background-primary transparent;
+z-index: 0;
+position: absolute;
+bottom: 0px;
+right: 0px;
+}

@@ -23,7 +23,7 @@ class App extends Component {
       <Provider store={stores}>
           <BrowserRouter>
             <ScrollToTop>
-              <Main/>
+              <Main />
             </ScrollToTop>
           </BrowserRouter>
         </Provider>

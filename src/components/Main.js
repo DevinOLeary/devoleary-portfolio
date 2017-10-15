@@ -1,5 +1,7 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch, withRouter} from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+
 
 
 //components
@@ -8,23 +10,36 @@ import HomePage from './HomePage';
 import DevAndDesign from './DevAndDesign';
 import AboutMe from './AboutMe';
 import Footer from './Footer';
+import Header from './Header';
 
 
-class Main extends React.Component{
+const Main = withRouter(({location}) => (
+  <div>
+    {location.pathname !== "/" && <Header/>}
+    <TransitionGroup>
+      <CSSTransition
+        key={location.key}
+        mountOnEnter={true}
+        unmountOnExit={true}
+        classNames="fade"
+        timeout={1200}>
+          <Switch location={location}>
+              <Route path="/" exact component={HomePage}/>
+              <Route path="/photography" component={Photography}/>
+              <Route path="/dev&design" component={DevAndDesign}/>
+              <Route path="/about" component={AboutMe}/>
+          </Switch>
+      </CSSTransition>
+    </TransitionGroup>
+    {location.pathname !== "/" && <Footer />}
+  </div>
+));
 
-  render() {
 
-    return (
-        <div className="body-container">
-            <Route path="/" exact component={HomePage}/>
-            <Route path="/photography" component={Photography}/>
-            <Route path="/dev&design" component={DevAndDesign}/>
-            <Route path="/about" component={AboutMe}/>
-            <Footer />
-        </div>
-    );
 
-    }
-  }
+
+
+
+
 
 export default Main;

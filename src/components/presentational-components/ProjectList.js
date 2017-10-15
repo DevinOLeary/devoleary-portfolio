@@ -1,6 +1,10 @@
 import React from 'react';
-import ProjectInfo from './ProjectInfo';
 import {Link, Element} from 'react-scroll';
+import {TransitionGroup} from 'react-transition-group';
+
+//components
+import Content from './SliderContent';
+import ContentFadeIn from '../small-components/ContentFadeIn';
 
 
 const ProjectList = (props) => {
@@ -20,7 +24,22 @@ const ProjectList = (props) => {
             </article>
           </div>
           <Element name={dev.id.toString()}>
-            <ProjectInfo info={dev} state={props.activeProject} closeProject={props.closeProject}/>
+            <TransitionGroup>
+              {dev.id.toString() === props.activeProject &&
+                <ContentFadeIn>
+                  <section className="project-pane" id={dev.id}>
+                    <Link to={dev.title.rendered} smooth={true}>
+                      <button onClick={props.closeProject}>close</button>
+                    </Link>
+                    <h2 className='text-center text-inverse'>{dev.title.rendered}</h2>
+                    <br/>
+                    <div className="flex-container center">
+                      <Content info={dev.acf}/>
+                    </div>
+                  </section>
+                </ContentFadeIn>
+              }
+            </TransitionGroup>
           </Element>
         </li>
       )

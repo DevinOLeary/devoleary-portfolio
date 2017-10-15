@@ -5,6 +5,7 @@ class PhotographyStore {
 
   @observable picInfo = []
   @observable page = ""
+  @observable loading = true
 
 
   @action loadImages(){
