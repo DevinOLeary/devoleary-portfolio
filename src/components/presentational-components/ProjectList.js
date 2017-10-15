@@ -26,7 +26,7 @@ const ProjectList = (props) => {
           <Element name={dev.id.toString()}>
             <TransitionGroup>
               {dev.id.toString() === props.activeProject &&
-                <ContentFadeIn styleProp='fade'>
+                <ContentFadeIn>
                   <section className="project-pane" id={dev.id}>
                     <Link to={dev.title.rendered} smooth={true}>
                       <button onClick={props.closeProject}>close</button>

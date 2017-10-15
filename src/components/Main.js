@@ -28,10 +28,10 @@ const Main = withRouter(({location}) => (
               <Route path="/photography" component={Photography}/>
               <Route path="/dev&design" component={DevAndDesign}/>
               <Route path="/about" component={AboutMe}/>
-              <Footer />
           </Switch>
       </CSSTransition>
     </TransitionGroup>
+    {location.pathname !== "/" && <Footer />}
   </div>
 ));
 

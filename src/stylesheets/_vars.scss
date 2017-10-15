@@ -1,11 +1,12 @@
 //colors
-$blue: rgba(72,136,176,1);
+$blue: #91BCC1;
 $blue-trans: rgba(72,136,176,.7);
 $red: rgba(227,116,117,1);
 $red-trans: rgba(227,116,117,.7);
 $dark-red: #DA6366;
 $white: rgb(255,255,255);
 $white-trans: rgba(255,255,255,.9);
+$transparent: rgba(0,0,0,0);
 $grey: rgb(90,90,90);
 
 
@@ -17,11 +18,13 @@ $background-secondary-trans: $red-trans;
 $background-white: $white;
 $background-white-trans: $white-trans;
 $background-grey: $grey;
+$background-transparent: $transparent;
 
 //text
 $text-inverse: $white;
 $text-default: $grey;
 $title-text: 'Dosis', sans-serif;
+$read-text: 'Lustria', serif;
 
 //buttons
 $button-red: $dark-red;
@@ -31,4 +34,4 @@ $button-red-hover: $red;
 
 
 //Imports
-@import url('https://fonts.googleapis.com/css?family=Dosis:300,500');
+@import url('https://fonts.googleapis.com/css?family=Dosis|Lustria');

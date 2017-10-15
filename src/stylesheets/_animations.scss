@@ -4,8 +4,8 @@
 
 .fade-enter-active {
   opacity: 1;
-  transition: all 800ms;
-  transition-delay: 400ms;
+  transition: all 700ms;
+  transition-delay: 700ms;
 }
 
 .fade-exit {
@@ -33,21 +33,4 @@
   opacity: 1;
   z-index: 100;
   position: fixed;
-}
-.mask-enter {
-  opacity: 1;
-}
-
-.mask-enter-active {
-  opacity: 0;
-  transition: all 800ms;
-}
-
-.mask-exit {
-  opacity: 0;
-  transition: 800ms;
-  transition-delay: 300ms;
-}
-.mask-exit-active {
-  opacity: 1;
 }

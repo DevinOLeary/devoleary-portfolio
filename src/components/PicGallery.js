@@ -32,6 +32,10 @@ class PicGallery extends React.Component {
     this.props.store.photographyStore.loading = !imagesLoaded(galleryElement);
   }
 
+  getStyle(){
+    return {opacity: this.props.store.photographyStore.loading ? 0 : 1}
+  }
+
 
   render(){
     const {picSort, locationMap} = this.props.store.photographyStore;
@@ -65,13 +69,15 @@ class PicGallery extends React.Component {
           <hgroup className="flex-container center">
             <h1>{this.props.title}</h1>
           </hgroup>
-          <ContentFadeIn in={!!loading} styleProp='fade'>
+          <div style = {this.getStyle()}>
+          <ContentFadeIn in={!loading}>
             <section className="flex-container center column">
               <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
                 {list}
               </ul>
             </section>
           </ContentFadeIn>
+          </div>
         </main>
         <div className="flex-container center mini-block">
           <NavLink to="/photography"><button className="button-secondary">Back To Categories</button></NavLink>
