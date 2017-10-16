@@ -5,7 +5,6 @@ class AboutMeStore{
   @observable timePeriodId = ''
   @observable aboutInfo = []
 
-
   @action loadAbout(){
     this.aboutInfo = []
     let dataUrl = 'http://localhost:8888/wordpress/wp-json/wp/v2/aboutme?_embed';
@@ -15,9 +14,6 @@ class AboutMeStore{
     })
     .catch(error => console.log(error))
     }
-
-
-
 
   @computed get activeTimePeriod(){
     return this.aboutInfo.filter((info) => (

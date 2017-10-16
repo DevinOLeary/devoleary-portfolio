@@ -12,27 +12,45 @@ import TimelineHeader from './presentational-components/TimelineHeader';
 class AboutMe extends React.Component {
   constructor(props){
     super(props);
+  }
+  componentWillMount(){
     this.props.store.aboutMeStore.loadAbout();
   }
+  componentDidUpdate(){
+    if(this.props.store.aboutMeStore.aboutInfo.length > 0){this.props.store.domainStore.loadingState()}
+  }
 
+  //set timePeriodId to the clicked id
   loadTime = (id) => {
     this.props.store.aboutMeStore.timePeriodId = id.toString();
   }
 
   render() {
     const {aboutInfo, activeTimePeriod} = this.props.store.aboutMeStore;
+    const {loading} = this.props.store.domainStore;
     const timelineInfo = aboutInfo.filter(info => (
       info.acf.category === 'timeline'
     ));
     const headshot = aboutInfo.find(info => (
       info.acf.category ===  'headshot'
     ));
-
+    const passionblurb = aboutInfo.find(info => (
+      info.acf.category === 'passions'
+    ));
     const props = {aboutInfo, timelineInfo};
     const active = activeTimePeriod;
+    const newHTML = document.createElement('html');
+    const content = loading === true ?
 
-    return (
-        <div className="body-container">
+        (
+          <div className="body-container">
+            <ContentFadeIn in={!loading}>
+              <h2>loading...</h2>
+            </ContentFadeIn>
+          </div>)
+     :
+      (<div className="body-container">
+    
           <div className="triangle-background"></div>
           <hgroup className="flex-container center column">
             <h2>a little about myself</h2>
@@ -42,7 +60,7 @@ class AboutMe extends React.Component {
             {aboutInfo.length > 0 &&
               <ContentFadeIn>
                 <section className="flex-container row even-spacing reverse-wrap">
-                  <section className="flex-container center column ">
+                  <div className="flex-container center column ">
                     <TimelineHeader {...props} loadTime={this.loadTime}/>
                     <div>
                       <TransitionGroup>
@@ -67,17 +85,33 @@ class AboutMe extends React.Component {
                         </ContentFadeIn>
                       </TransitionGroup>
                     </div>
-                  </section>
+                  </div>
                   <img src={headshot._embedded['wp:featuredmedia']["0"].source_url}
                   alt={headshot.acf.category}
                   className="headshot"/>
                 </section>
-                
               </ContentFadeIn>
           }
         </TransitionGroup>
-        </div>
-    );
+        <TransitionGroup>
+        {aboutInfo.length > 0 &&
+          <ContentFadeIn>
+            <section className="flex-container center column">
+              <h2>my passions</h2>
+              <hr className="divider-colored"/>
+              <div>
+
+              </div>
+            </section>
+          </ContentFadeIn>
+        }
+        </TransitionGroup>
+        </div>)
+    return (
+      <div>
+        {content}
+      </div>
+    )
   }
 }
 
