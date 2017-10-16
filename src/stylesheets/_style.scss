@@ -37,6 +37,10 @@ a {
   text-decoration: none;
   color: inherit;
   font-size: 24px;
+  transition: .3s;
+}
+a:hover {
+  color: $text-active;
 }
 
 .text-inverse {
@@ -63,13 +67,8 @@ a {
   background-color: $background-primary;
 }
 
-.img-categories {
-  filter: grayscale(100%);
-  transition: .4s;
-}
-.img-categories:hover {
-  filter: grayscale(0%);
-}
+
+
 
 .nav-side {
  a {
