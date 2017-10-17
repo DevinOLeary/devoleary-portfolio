@@ -26,7 +26,6 @@ class PicGallery extends React.Component {
   }
 
 
-
   handleImageLoad(){
     const galleryElement = this.refs.gallery;
     this.props.store.photographyStore.loading = !imagesLoaded(galleryElement);

@@ -1,3 +1,4 @@
+//figures
 .divider-colored {
   border-color: $background-primary;
   background-color: $background-primary;
@@ -15,15 +16,7 @@
   height: 1px;
   margin: 20px;
 }
-.headshot {
-  height: 300px;
-  width: auto;
-  border-radius: 200px;
-  margin-top: 100px;
-  z-index: 100;
-  box-shadow: 0px 0px 5px;
-  align-self: flex-end;
-}
+
 .triangle {
   position: absolute;
   bottom: 0;
@@ -35,6 +28,17 @@
   background-size: cover;
   clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
   transform: rotateY(180deg);
+}
+.triangle-left {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  height: 100%;
+  width: 80%;
+  min-width: 800px;
+  background-color: $background-primary;
+  background-size: cover;
+  clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
 }
 .display-box{
   height: auto;
@@ -52,4 +56,43 @@
     width:99%;
     padding: 50px 0;
   }
+}
+.slider {
+  height: 100px;
+  width: 300px;
+}
+//Images
+.img-presented {
+  width: 80vw;
+  margin: 20px 0;
+}
+.img-categories {
+  width: 45vw;
+}
+.img-project_preview {
+  width:40%;
+  height:auto;
+  min-width: 400px;
+  min-height: 300px;
+  object-fit: cover;
+}
+.img-project_list {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 200px;
+}
+.img-skill {
+  height: 100px;
+  width: auto;
+  margin-left: 30px;
+}
+.headshot {
+  height: 300px;
+  width: auto;
+  border-radius: 200px;
+  margin-top: 100px;
+  z-index: 100;
+  box-shadow: 0px 0px 5px;
+  align-self: flex-end;
 }

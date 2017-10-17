@@ -11,13 +11,12 @@ import AboutContent from './presentational-components/AboutContent';
 @observer
 class AboutMe extends React.Component {
 
+
   componentWillMount(){
     this.props.store.aboutMeStore.loadAbout();
-    this.props.store.domainStore.unloadState();
   }
-  componentWillUpdate(){
-    if(this.props.store.aboutMeStore.aboutInfo.length > 0){this.props.store.domainStore.loadingState()}
-  }
+
+
 
   //set timePeriodId to the clicked id
   loadTime = (id) => {
@@ -25,8 +24,7 @@ class AboutMe extends React.Component {
   }
 
   render() {
-    const {aboutInfo, activeTimePeriod} = this.props.store.aboutMeStore;
-    const {loading} = this.props.store.domainStore;
+    const {aboutInfo, activeTimePeriod, loading} = this.props.store.aboutMeStore;
     const timelineInfo = aboutInfo.filter(info => (
       info.acf.category === 'timeline'
     ));
