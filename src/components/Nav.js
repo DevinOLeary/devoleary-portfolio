@@ -1,8 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-class Nav extends React.Component {
-  render(){
+const Nav = () => {
     return(
       <nav>
         <ul className="flex-container nav-bar row">
@@ -12,7 +11,6 @@ class Nav extends React.Component {
         </ul>
       </nav>
     );
-  }
 }
 
 export default Nav;

@@ -3,18 +3,17 @@ import {inject, observer} from 'mobx-react';
 
 //components
 import ProjectList from './presentational-components/ProjectList'
+import ContentFadeIn from './small-components/ContentFadeIn';
+import Content from './presentational-components/SliderContent';
 
 @inject('store')
 @observer
 class DevAndDesign extends React.Component {
-  constructor(props){
-    super(props);
-    this.props.store.projectStore.loadProjects()
-  }
+
   componentWillMount(){
+    this.props.store.projectStore.loadProjects()
     this.props.store.projectStore.activeProject = ''
   }
-
 
   isOpen = (id) => {
     this.props.store.projectStore.activeProject = id.toString();
@@ -24,22 +23,23 @@ class DevAndDesign extends React.Component {
   }
 
   render() {
-    const {projectInfo, activeProject} = this.props.store.projectStore;
-    let props = {projectInfo, activeProject}
+    const {projectInfo, activeProject, loading} = this.props.store.projectStore;
+    let props = {projectInfo, activeProject, loading}
     return(
-      <div>
-        <main className="body-container">
-          <section>
-            <ProjectList {...props} isOpen={this.isOpen}
-            closeProject={this.closeProject} category="Development"/>
-          </section>
-          <br/>
-          <section>
-            <ProjectList {...props} isOpen={this.isOpen}
-            closeProject={this.closeProject} category="Design"/>
-          </section>
-        </main>
-      </div>
+        <ContentFadeIn in={!loading}>
+          <main className="body-container">
+          <div className="triangle"></div>
+            <section className="flex-container center column">
+              <h2>my work</h2>
+              <br/>
+              <Content {...props}/>
+            </section>
+            <section>
+              <ProjectList {...props} isOpen={this.isOpen}
+              closeProject={this.closeProject}/>
+            </section>
+          </main>
+        </ContentFadeIn>
     );
   }
 }

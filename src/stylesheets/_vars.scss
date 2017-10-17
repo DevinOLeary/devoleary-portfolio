@@ -1,10 +1,8 @@
 //colors
 $blue: #91BCC1;
+$blue-light: #A1D3DA;
 $blue-trans: rgba(72,136,176,.7);
 $gold: #DFAB1C;
-$red: rgba(227,116,117,1);
-$red-trans: rgba(227,116,117,.7);
-$dark-red: #DA6366;
 $white: rgb(255,255,255);
 $white-trans: rgba(255,255,255,.9);
 $transparent: rgba(0,0,0,0);
@@ -13,9 +11,7 @@ $grey: rgb(90,90,90);
 
 //backgrounds
 $background-primary: $blue;
-$background-secondary: $dark-red;
-$background-primary-trans: $blue-trans;
-$background-secondary-trans: $red-trans;
+$background-secondary: $gold;
 $background-white: $white;
 $background-white-trans: $white-trans;
 $background-grey: $grey;
@@ -29,8 +25,8 @@ $read-text: 'Lustria', serif;
 $text-active: $gold;
 
 //buttons
-$button-red: $dark-red;
-$button-red-hover: $red;
+$button-primary: $blue;
+$button-primary-hover: $blue-light;
 
 
 

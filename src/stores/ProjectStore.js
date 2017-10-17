@@ -4,6 +4,7 @@ import axios from 'axios';
 class ProjectStore {
   @observable projectInfo = []
   @observable activeProject = ''
+  @observable loading = true
 
   @action loadProjects(){
     this.picInfo = []
@@ -11,6 +12,7 @@ class ProjectStore {
     return axios.get(dataUrl)
     .then(res => {
       this.projectInfo = res.data
+      this.loading = false
     })
     .catch(error => console.log(error))
     }

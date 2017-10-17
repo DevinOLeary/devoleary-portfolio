@@ -13,13 +13,14 @@ button:hover {
 }
 
 .button-action {
-  background-color: $button-red;
+  background-color: $button-primary;
   color: inherit;
   box-shadow: -1px 0 2px $background-grey;
   transition: .3s;
 }
 .button-action:hover {
-  background-color: $button-red-hover;
+  background-color: $button-primary-hover;
+  color: $text-inverse;
 }
 
 .slick-prev:before, .slick-next:before {
