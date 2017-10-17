@@ -10,11 +10,10 @@ import AboutContent from './presentational-components/AboutContent';
 @inject('store')
 @observer
 class AboutMe extends React.Component {
-  constructor(props){
-    super(props);
-  }
+
   componentWillMount(){
     this.props.store.aboutMeStore.loadAbout();
+    this.props.store.domainStore.unloadState();
   }
   componentWillUpdate(){
     if(this.props.store.aboutMeStore.aboutInfo.length > 0){this.props.store.domainStore.loadingState()}
@@ -31,11 +30,8 @@ class AboutMe extends React.Component {
     const timelineInfo = aboutInfo.filter(info => (
       info.acf.category === 'timeline'
     ));
-    const passionblurb = aboutInfo.find(info => (
-      info.acf.category === 'passions'
-    ));
-    const props = {aboutInfo, timelineInfo, active, loading};
     const active = activeTimePeriod;
+    const props = {aboutInfo, timelineInfo, active, loading};
     return(
       <div>
         <hgroup className="flex-container center column">
@@ -48,6 +44,7 @@ class AboutMe extends React.Component {
       </div>
     );
   }
+
 }
 
 export default AboutMe;

@@ -7,6 +7,9 @@ class DomainStore{
   @action loadingState(){
     return this.loading = false
   }
+  @action unloadState(){
+    return this.loading = true
+  }
 }
 
 export default DomainStore;

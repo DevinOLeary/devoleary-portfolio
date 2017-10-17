@@ -14,14 +14,26 @@ class Photography extends React.Component{
     super(props);
     this.props.store.photographyStore.loadImages();
   }
+  componentWillMount(){
+    this.props.store.photographyStore.loadImages();
+    this.props.store.domainStore.unloadState();
+  }
+  componentWillUpdate(){
+    if(this.props.store.photographyStore.picInfo.length > 0){this.props.store.domainStore.loadingState()}
+  }
 
 
   render(){
+    const {picInfo, page} = this.props.store.photographyStore;
+    const {loading} = this.props.store.domainStore;
+    const props = {picInfo, page, loading}
     return(
       <div className="body-container">
-        <Route path="/photography" exact component={PhotoCategories}/>
-        <Route path="/photography/category_action" exact render={(props) => (<PicGallery title="Action"/>)}/>
-        <Route path="/photography/category_travel" exact render={(props) => (<PicGallery title="Travel"/>)}/>
+        <Route path="/photography" exact render={(props) => (<PhotoCategories {...props}/>)}/>
+
+        <Route path="/photography/category_action" exact render={(props) => (<PicGallery {...props} title="Action"/>)}/>
+        
+        <Route path="/photography/category_travel" exact render={(props) => (<PicGallery {...props} title="Travel"/>)}/>
       </div>
     );
   }

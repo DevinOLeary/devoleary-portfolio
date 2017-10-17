@@ -46,7 +46,7 @@ h1,h2,h3,h4,h5 {
     position: relative;
   }
   .footer-container {
-    height: 200px;
+    padding: 100px;
     z-index:10;
   }
   .text-center {
@@ -144,6 +144,7 @@ h1,h2,h3,h4,h5 {
 }
 .body-section {
   z-index: 10;
+  margin-bottom: 50px;
 }
 .header-offset {
   width: 30%;
