@@ -21,7 +21,6 @@ export const Content = (props) => {
       cat.acf.category === 'skills'
     ));
     let skills = filter[0].acf;
-    console.log(skills)
     return (
 
         <article className="flex-container center column full-width">

@@ -7,7 +7,7 @@ const ProjectContent = (props) => {
     <article>
       <h2>{info.title}</h2>
       <hr className="divider-colored"/>
-      <img src={info.image_one} alt={info.title}/>
+      <img src={info.image_one.url} alt={info.title} className="img-project_preview"/>
     </article>
   );
 }
