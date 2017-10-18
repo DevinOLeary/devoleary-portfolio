@@ -34,11 +34,12 @@ class DevAndDesign extends React.Component {
       ))
     );
     let openInfo = (openProject.acf);
-    console.log(openInfo)
+
 
     return(
         <ContentFadeIn in={!loading}>
           <main className="body-container">
+          <span className="triangle"></span>
             <section className="flex-container center column">
               <h2>my work</h2>
               <br/>
@@ -50,9 +51,7 @@ class DevAndDesign extends React.Component {
                   <TransitionGroup>
                       <ContentFadeIn>
                         <section className="display-box flex-container center column" id={openProject.id}>
-
-                            <button onClick={props.closeProject}>close</button>
-
+                          <button onClick={this.closeProject}>close</button>
                           <h2 className='text-center text-inverse'>{openInfo.title}</h2>
                           <br/>
                           <div className="flex-container center">

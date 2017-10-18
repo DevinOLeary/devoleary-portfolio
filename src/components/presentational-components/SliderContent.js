@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from 'react-slick';
 
 //components
-import {LeftButton, RightButton} from '../small-components/SliderButtons';
 import LoadingPane from '../small-components/LoadingPane';
 
 

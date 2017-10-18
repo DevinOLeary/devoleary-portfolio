@@ -8,10 +8,22 @@ const Header = () => {
       <header className="header-subpage flex-container center">
         <nav className="full-width">
           <ul className="nav-bar flex-container">
-            <li><NavLink to="/">home</NavLink></li>
-            <li><NavLink to="/photography">photography</NavLink></li>
-            <li><NavLink to="/dev&design">development & design</NavLink></li>
-            <li><NavLink to="/about">about me</NavLink></li>
+            <li>
+              <NavLink exact to="/">home</NavLink>
+              <hr className='link-underline'/>
+            </li>
+            <li>
+              <NavLink to="/photography">photography</NavLink>
+              <hr className='link-underline'/>
+            </li>
+            <li>
+              <NavLink to="/dev&design">development & design</NavLink>
+              <hr className='link-underline'/>
+            </li>
+            <li>
+              <NavLink to="/about">about me</NavLink>
+              <hr className='link-underline'/>
+            </li>
           </ul>
         </nav>
       </header>

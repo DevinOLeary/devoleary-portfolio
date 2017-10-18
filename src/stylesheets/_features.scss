@@ -16,6 +16,15 @@
   height: 1px;
   margin: 20px;
 }
+.link-underline {
+  width: 1px;
+  height: 0px;
+  opacity: 0;
+  border-color: $background-secondary;
+  background-color: $background-secondary;
+  border-style: solid;
+  transition-duration: .3s;
+}
 
 .triangle {
   position: absolute;

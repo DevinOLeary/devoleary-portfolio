@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-scroll';
-import {TransitionGroup} from 'react-transition-group';
+
 
 //components
-import ContentFadeIn from '../small-components/ContentFadeIn';
+
 
 
 
@@ -15,7 +15,6 @@ const ProjectList = (props) => {
     ));
     // mapping of projects
     const itemList = projectFilter.map(work => {
-      const title = work.title.rendered;
         return (
           <li key={work.id}>
             <div className="project_item-container">

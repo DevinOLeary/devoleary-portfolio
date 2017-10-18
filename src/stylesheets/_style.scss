@@ -52,9 +52,6 @@ button:focus {
 
 //elements
 
-.header-subpage {
-
-}
 .footer-container {
   background-color: $background-grey;
 }
@@ -71,7 +68,9 @@ button:focus {
 }
 
 
-
+.active {
+  color: $text-active;
+}
 
 .nav-side {
  a {
