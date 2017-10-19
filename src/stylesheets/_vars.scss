@@ -1,8 +1,10 @@
 //colors
-$blue: #91BCC1;
+$blue: rgba(145,188,193,1);
+$blue-trans: rgba(145,188,193,.6);
 $blue-light: #A1D3DA;
 $blue-trans: rgba(72,136,176,.7);
-$gold: #DFAB1C;
+$gold: rgba(223,171,28,1);
+$gold-trans: rgba(223,171,28,.7);
 $white: rgb(255,255,255);
 $white-trans: rgba(255,255,255,.9);
 $transparent: rgba(0,0,0,0);
@@ -12,7 +14,9 @@ $grey-trans: rgba(90,90,90,.7);
 
 //backgrounds
 $background-primary: $blue;
+$background-primary-trans: $blue-trans;
 $background-secondary: $gold;
+$background-secondary-trans: $gold-trans;
 $background-white: $white;
 $background-white-trans: $white-trans;
 $background-grey: $grey;

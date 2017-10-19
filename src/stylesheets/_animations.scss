@@ -26,7 +26,8 @@
   overflow: hidden;
   max-height: 1000px;
   opacity: 1;
-  transition:1s;
+  transition-delay: 200ms;
+  transition:1300ms;
 }
 
 .open-exit {
@@ -35,7 +36,8 @@
 }
 .open-exit-active {
   opacity: 0;
-  transition: 1s;
+  transition-delay: 200ms;
+  transition: 1300ms;
   max-height:0px;
   overflow: hidden;
 }
