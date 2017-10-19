@@ -12,6 +12,7 @@ const ProjectContainer = (props) => {
   if(props.loading === true){return <LoadingPane/>}else{
     return(
       <section className="flex-container center column">
+        <span className='triangle'></span>
         <Content {...props}/>
         <Element name='projectPane'><div></div></Element>
           <TransitionGroup>
@@ -31,7 +32,7 @@ const ProjectContainer = (props) => {
             </ProjectContent>
             }
           </TransitionGroup>
-        <ProjectList {...props} isOpen={props.isOpen}/>
+        <ProjectList {...props} isOpen={props.isOpen} updateCategoryList={props.updateCategoryList}/>
       </section>
     )
   }

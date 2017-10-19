@@ -14,6 +14,10 @@ class DevAndDesign extends React.Component {
     this.props.store.projectStore.activeProject = ''
   }
 
+  updateCategoryList = (category) => {
+    this.props.store.projectStore.activeCategory = category
+  }
+
   isOpen = (id) => {
     this.props.store.projectStore.activeProject = id.toString();
   };
@@ -22,14 +26,14 @@ class DevAndDesign extends React.Component {
   }
 
   render() {
-    const {projectInfo, activeProject, loading} = this.props.store.projectStore;
+    const {projectInfo, activeProject, loading, filteredProjects} = this.props.store.projectStore;
     let openProject = (projectInfo.length > 0 && activeProject.length > 0 &&
       projectInfo.find(info => (
         info.id.toString() === activeProject
       ))
     );
     let openInfo = (openProject.acf);
-    const props = {projectInfo, activeProject, loading, openInfo}
+    const props = {projectInfo, activeProject, loading, openInfo, filteredProjects}
 
     return(
       <main className="body-container">
@@ -38,7 +42,7 @@ class DevAndDesign extends React.Component {
           <br/>
         </hgroup>
         <ContentFadeIn in={!loading}>
-          <ProjectContainer {...props} closeProject={this.closeProject} isOpen={this.isOpen}/>
+          <ProjectContainer {...props} closeProject={this.closeProject} isOpen={this.isOpen} updateCategoryList={this.updateCategoryList}/>
         </ContentFadeIn>
       </main>
 
