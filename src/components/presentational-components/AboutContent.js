@@ -13,7 +13,7 @@ const AboutContent = (props) => {
       <main className="body-container">
         <div className="triangle"></div>
         <div>
-          <section className="flex-container row even-spacing reverse-wrap body-section">
+          <section className="flex-container row even-spacing reverse-wrap body-section ">
             <div className="flex-container center column ">
               <TimelineHeader {...props} loadTime={props.loadTime}/>
               <div>
@@ -40,7 +40,7 @@ const AboutContent = (props) => {
               alt={headshot.acf.category}
               className="headshot"/>
           </section>
-          <section className="body-section">
+          <section className="body-section ">
             <hgroup className="header-offset">
               <h2 className="text-center">my passions</h2>
               <hr className="divider-colored"/>

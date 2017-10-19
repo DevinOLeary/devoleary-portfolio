@@ -22,7 +22,7 @@ export const Content = (props) => {
     let skills = filter[0].acf;
     return (
 
-        <article className="flex-container center column full-width">
+        <article className="flex-container center column full-width ">
           <div className="flex-container center">
             <p className="content-body_read">{skills.description}</p>
           </div>

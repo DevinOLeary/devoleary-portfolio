@@ -3,7 +3,7 @@ import React from 'react';
 
 const PicCategory = (props) => {
   return (
-    <figure>
+    <figure className="hover-highlight">
       <hgroup className="flex-container column center">
         <h2>{props.title}</h2>
         <hr className="dash-vertical"/>

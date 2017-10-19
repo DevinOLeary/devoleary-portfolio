@@ -17,7 +17,10 @@ const ProjectList = (props) => {
     const itemList = projectFilter.map(work => {
         return (
           <li key={work.id}>
-            <div className="project_item-container">
+            <div className="project_list_img-container">
+              <div className="project_list_img-overlay">
+                <h4 className="text-inverse">{work.acf.title}</h4>
+              </div>
               <Link to="projectPane" smooth={true}>
               <img className="img-project_list" src={work._embedded['wp:featuredmedia']["0"].source_url}
               alt={work.slug} onClick={props.isOpen.bind(this, work.id)}/>
@@ -27,13 +30,13 @@ const ProjectList = (props) => {
         )
     })
     return (
-      <div>
-        <section className="flex-container center row">
-          <ul>
-            <li><a href=""><h2>Development</h2></a><hr className="divider-colored"/></li>
-            <li><a href=""><h2>Design</h2></a><hr className="divider-colored"/></li>
+      <div className="flex-container center">
+        <section className="flex-container center row open_content-container">
+          <ul className="flex-container row even-spacing full-width">
+            <li className="flex-container column center hover-highlight"><a><h2>Development</h2></a><br/><hr className="dash-vertical"/></li>
+            <li className="flex-container column center hover-highlight"><a><h2>Design</h2></a><br/><hr className="dash-vertical"/></li>
           </ul>
-          <ul className='list_columns-container'>
+          <ul className='flex-container row center'>
             {itemList}
           </ul>
         </section>
