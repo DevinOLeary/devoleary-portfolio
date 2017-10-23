@@ -15,7 +15,27 @@
   border-style: solid;
   height: 1px;
   margin: 20px;
+  transition: .3s;
 }
+
+
+.link-underline {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  border-style: solid;
+  transition-duration: .3s;
+}
+
+.hover-highlight:hover {
+  cursor: pointer;
+  .link-underline {
+    height: 1px;
+    width: 80%;
+    opacity: 1;
+  }
+}
+
 
 .triangle {
   position: absolute;
@@ -26,8 +46,11 @@
   min-width: 800px;
   background-color: $background-primary;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
   transform: rotateY(180deg);
+  z-index: 0;
 }
 .triangle-left {
   position: absolute;
@@ -38,16 +61,18 @@
   min-width: 800px;
   background-color: $background-primary;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+  z-index: 0;
 }
 .display-box{
   height: auto;
   width: 60%;
   min-width: 500px;
   background-color: $background-white;
-  z-index: 200;
   box-shadow: 0px 0px 5px;
-  padding: 10px;
+  padding: 3%;
   margin-bottom: 100px;
   margin-top: 50px;
   .inner-box {
@@ -61,6 +86,26 @@
   height: 100px;
   width: 300px;
 }
+.mobile_menu-header {
+  text-align: right;
+  h4 {
+    margin: 20px;
+  }
+}
+.mobile_menu-container {
+  position: absolute;
+  height: 100vh;
+  max-width: 200px;
+  transition: .5s;
+  background-color: $background-primary;
+  z-index: 1000;
+}
+.menu-open{
+  right: 0;
+}
+.menu-close {
+  right: -200px;
+}
 //Images
 .img-presented {
   width: 80vw;
@@ -68,6 +113,7 @@
 }
 .img-categories {
   width: 45vw;
+  min-width: 400px;
 }
 .img-project_preview {
   width:40%;
@@ -76,23 +122,47 @@
   min-height: 300px;
   object-fit: cover;
 }
-.img-project_list {
-  width: 250px;
-  height: 250px;
+.project_list_img-container img {
+  height: 200px;
   object-fit: cover;
-  border-radius: 200px;
 }
 .img-skill {
   height: 100px;
   width: auto;
   margin-left: 30px;
 }
+.img-social {
+  width: 50px;
+  height: auto;
+  margin: 5px 14px;
+}
 .headshot {
   height: 300px;
   width: auto;
   border-radius: 200px;
   margin-top: 100px;
-  z-index: 100;
   box-shadow: 0px 0px 5px;
   align-self: flex-end;
+}
+.homepage-banner {
+  background-image: url('../images/home-banner.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.project_list_img-overlay{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity:0;
+  transition: opacity .5s;
+  background-color: $background-secondary-trans;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+.project_list_img-overlay:hover{
+  opacity:1;
 }

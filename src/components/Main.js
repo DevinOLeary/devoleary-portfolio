@@ -19,8 +19,6 @@ const Main = withRouter(({location}) => (
     <TransitionGroup>
       <CSSTransition
         key={location.key}
-        mountOnEnter={true}
-        unmountOnExit={true}
         classNames="fade"
         timeout={1200}>
           <Switch location={location}>

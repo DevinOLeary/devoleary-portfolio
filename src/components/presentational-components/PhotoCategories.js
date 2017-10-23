@@ -27,12 +27,12 @@ class PhotoCategories extends React.Component {
         <section className="body-container">
           <div className="triangle-left"></div>
           <div className="flex-container row even-spacing">
-            <div className="text-center animated fadeInDown header-pic_category">
+            <div className="text-center header-pic_category">
               <NavLink to="/photography/category_action">
                 <PicCategory image={actionImage} title="Action"/>
               </NavLink>
             </div>
-            <div className="text-center animated fadeInDown header-pic_category">
+            <div className="text-center header-pic_category">
               <NavLink to="/photography/category_travel">
                 <PicCategory image={travelImage} title="Travel"/>
               </NavLink>

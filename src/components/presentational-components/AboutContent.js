@@ -6,6 +6,9 @@ import LoadingPane from '../small-components/LoadingPane';
 
 const AboutContent = (props) => {
   if(props.loading === true){return <LoadingPane/>}else{
+    const activeDescription = (props.active.length > 0 &&
+      props.active[0].acf.time_description
+    )
     const headshot = props.aboutInfo.find(info => (
       info.acf.category ===  'headshot'
     ));
@@ -13,25 +16,21 @@ const AboutContent = (props) => {
       <main className="body-container">
         <div className="triangle"></div>
         <div>
-          <section className="flex-container row even-spacing reverse-wrap body-section">
+          <section className="flex-container row even-spacing reverse-wrap body-section ">
             <div className="flex-container center column ">
               <TimelineHeader {...props} loadTime={props.loadTime}/>
-              <div>
+              <div className="flex-container center column">
                   {props.timelineInfo.length > 0 &&
                   props.active.length > 0 ?
                     <article className="content-body_read">
                       <h2>{props.active[0].acf.time_title}</h2>
                       <h4>{props.active[0].acf.date_range}</h4>
-                      <p>{props.active[0].acf.time_description}</p>
+                      <p>{activeDescription}</p>
                     </article>
                     :
                     <article className="content-body_read">
-                      <p>Everyday carry normcore hammock flannel, live-edge vaporware
-                      freegan pug 8-bit single-origin coffee hell of meh DIY lyft.
-                      Pok pok craft beer post-ironic vice, williamsburg swag shaman
-                       helvetica hexagon. Deep v seitan brunch vexillologist,
-                       authentic ugh jean shorts single-origin coffee art party
-                       trust fund unicorn succulents ethical plaid cornhole. </p>
+                      <p>I believe we create our own purpose in life; one that ultimately brings us the most satisfaction and fulfillment. The scope that we apply to this purpose correlates with the level of satisfaction and fulfillment returned, so it only makes sense that we live with the greatest scope possible. We can't single handedly save the world, but we can each play our part to lead meaningful, intentional lives, and build tools that can be used to maximize environmental, societal, and personal wellbeing. I'm devoting my life to learning and collaborating with likeminded innovators to build the tools to achieve this ultimate purpose.
+                      </p>
                     </article>
                 }
               </div>
@@ -40,7 +39,7 @@ const AboutContent = (props) => {
               alt={headshot.acf.category}
               className="headshot"/>
           </section>
-          <section className="body-section">
+          <section className="body-section ">
             <hgroup className="header-offset">
               <h2 className="text-center">my passions</h2>
               <hr className="divider-colored"/>

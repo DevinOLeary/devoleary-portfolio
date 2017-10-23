@@ -21,7 +21,7 @@ h1,h2,h3,h4,h5 {
 //containers and flex
   .flex-container {
     display: flex;
-    z-index: 10;
+    position: relative;
   }
   .center {
     justify-content: center;
@@ -32,14 +32,19 @@ h1,h2,h3,h4,h5 {
   }
   .row {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .even-spacing {
     justify-content: space-around;
+  }
+  .space-between{
+    justify-content: space-between;
   }
 
   .reverse-wrap {
     flex-wrap: wrap-reverse;
   }
+
   .body-container {
     min-height: 100vh;
     height:100%;
@@ -47,19 +52,9 @@ h1,h2,h3,h4,h5 {
   }
   .footer-container {
     padding: 100px;
-    z-index:10;
   }
   .text-center {
     text-align: center;
-  }
-  .project_item-container {
-    display: flex;
-    min-height: 300px;
-    width: 40vw;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 10%;
   }
   .project_text-container {
     position: absolute;
@@ -71,16 +66,28 @@ h1,h2,h3,h4,h5 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index:10;
+  }
+.project_list_img-container {
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 200px;
+  position: relative;
+  margin: 20px;
+}
+  .open_content-container {
+    width:80%;
+    margin: 15vh 0;
   }
 
 
 
 //elements
 
-.header-pic_category {
-  z-index: 100;
-}
+
 //Nav
 .nav-bar {
   justify-content: space-around;
@@ -94,6 +101,7 @@ h1,h2,h3,h4,h5 {
   transform: rotateZ(270deg);
   height: 10px;
   aside{
+    width: 50vh;
     position: absolute;
     bottom: 15px;
     ul{
@@ -125,12 +133,13 @@ h1,h2,h3,h4,h5 {
 .content-body_read {
   width: 80%;
   height: auto;
-  overflow:visible;
+  overflow:scroll;
   max-width: 600px;
-  min-width: 400px;
+  min-width: 300px;
+  max-height: 80vh;
+  background-color: $background-white;
 }
 .body-section {
-  z-index: 10;
   margin-bottom: 50px;
 }
 .header-offset {
@@ -145,6 +154,9 @@ h1,h2,h3,h4,h5 {
 }
 .timeline-header {
   padding: 1em;
+}
+.project_cat-header {
+  margin: 5%;
 }
 .timeline-body:first-child{
   margin-left:0px;

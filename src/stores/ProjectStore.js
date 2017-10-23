@@ -1,10 +1,11 @@
-import {observable, action} from 'mobx';
+import {observable, action, computed} from 'mobx';
 import axios from 'axios';
 
 class ProjectStore {
   @observable projectInfo = []
   @observable activeProject = ''
   @observable loading = true
+  @observable activeCategory = 'all'
 
   @action loadProjects(){
     this.picInfo = []
@@ -17,6 +18,17 @@ class ProjectStore {
     .catch(error => console.log(error))
     }
 
+  @computed get filteredProjects(){
+    const active = this.activeCategory;
+    return(
+      active === 'all' ? this.projectInfo.filter(proj => (
+        proj.acf.category.toLowerCase() !== "skills"
+      )) :
+      this.projectInfo.filter(proj => (
+        proj.acf.category.toLowerCase() === this.activeCategory
+      ))
+    )
+  }
 
 }
 

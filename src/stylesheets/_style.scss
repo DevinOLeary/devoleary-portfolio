@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5, a{
   font-family: $title-text;
   font-weight: 300;
   color: inherit;
+  transition: .3s;
 }
 p {
   font-family: $read-text;
@@ -39,9 +40,7 @@ a {
   font-size: 24px;
   transition: .3s;
 }
-a:hover {
-  color: $text-active;
-}
+
 
 .text-inverse {
   color: $text-inverse;
@@ -52,9 +51,6 @@ button:focus {
 
 //elements
 
-.header-subpage {
-
-}
 .footer-container {
   background-color: $background-grey;
 }
@@ -71,6 +67,9 @@ button:focus {
 }
 
 
+.active {
+  color: $text-active;
+}
 
 
 .nav-side {

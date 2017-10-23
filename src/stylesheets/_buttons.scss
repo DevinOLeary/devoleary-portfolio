@@ -8,14 +8,20 @@ a:hover {
   font-size: 18px;
   color: $text-default;
 }
+button{
+  border: none;
+  color: inherit;
+}
 button:hover {
   cursor: pointer;
 }
 
+.button-long {
+  width: 60%;
+}
 .button-action {
   background-color: $button-primary;
-  color: inherit;
-  box-shadow: -1px 0 2px $background-grey;
+  color: $text-inverse;
   transition: .3s;
 }
 .button-action:hover {

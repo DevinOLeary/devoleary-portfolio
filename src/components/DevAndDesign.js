@@ -2,9 +2,8 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 
 //components
-import ProjectList from './presentational-components/ProjectList'
+import ProjectContainer from './presentational-components/ProjectContainer';
 import ContentFadeIn from './small-components/ContentFadeIn';
-import Content from './presentational-components/SliderContent';
 
 @inject('store')
 @observer
@@ -15,6 +14,10 @@ class DevAndDesign extends React.Component {
     this.props.store.projectStore.activeProject = ''
   }
 
+  updateCategoryList = (category) => {
+    this.props.store.projectStore.activeCategory = category
+  }
+
   isOpen = (id) => {
     this.props.store.projectStore.activeProject = id.toString();
   };
@@ -23,23 +26,26 @@ class DevAndDesign extends React.Component {
   }
 
   render() {
-    const {projectInfo, activeProject, loading} = this.props.store.projectStore;
-    let props = {projectInfo, activeProject, loading}
+    const {projectInfo, activeProject, loading, filteredProjects, activeCategory} = this.props.store.projectStore;
+    let openProject = (projectInfo.length > 0 && activeProject.length > 0 &&
+      projectInfo.find(info => (
+        info.id.toString() === activeProject
+      ))
+    );
+    const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, openProject}
+
     return(
+      <main className="body-container">
+
+        <hgroup>
+          <h2 className="text-center">my work</h2>
+          <br/>
+        </hgroup>
         <ContentFadeIn in={!loading}>
-          <main className="body-container">
-          <div className="triangle"></div>
-            <section className="flex-container center column">
-              <h2>my work</h2>
-              <br/>
-              <Content {...props}/>
-            </section>
-            <section>
-              <ProjectList {...props} isOpen={this.isOpen}
-              closeProject={this.closeProject}/>
-            </section>
-          </main>
+          <ProjectContainer {...props} closeProject={this.closeProject} isOpen={this.isOpen} updateCategoryList={this.updateCategoryList}/>
         </ContentFadeIn>
+      </main>
+
     );
   }
 }

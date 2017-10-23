@@ -1,14 +1,17 @@
 import React from 'react';
+import {CSSTransition} from 'react-transition-group';
 
 
-const ProjectContent = (props) => {
-  const info = props.info;
+const ProjectContent = ({children,...props}) => {
   return(
-    <article>
-      <h2>{info.title}</h2>
-      <hr className="divider-colored"/>
-      <img src={info.image_one} alt={info.title}/>
-    </article>
+    <CSSTransition
+    {...props}
+    timeout={1500}
+    classNames='open'>
+      <section className="display-box flex-container center column">
+          {children}
+      </section>
+    </CSSTransition>
   );
 }
 
