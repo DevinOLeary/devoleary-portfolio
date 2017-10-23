@@ -1,20 +1,10 @@
 import React from 'react';
-import Slider from 'react-slick';
 
 //components
 import LoadingPane from '../small-components/LoadingPane';
 
 
-const settings = {
-  infinite: false,
-  fade: true,
-  accessibility: true,
-  swipeToSlide: true,
-  autoplay: true,
-  centerMode: true,
-  arrows: false
-}
-export const Content = (props) => {
+export const DesignSkills = (props) => {
   if(props.loading === true){return <LoadingPane/>} else {
     const filter = props.projectInfo.filter(cat => (
       cat.acf.category === 'skills'
@@ -26,20 +16,26 @@ export const Content = (props) => {
           <div className="flex-container center">
             <p className="content-body_read">{skills.description}</p>
           </div>
-          <Slider {...settings} className="slider">
-            <div>
+          <ul className="flex-container row center">
+            <li>
               <img src={skills.image_one.url} className='img-skill' alt={skills.category}/>
-            </div>
-            <div>
+            </li>
+            <li>
               <img src={skills.image_two.url} className='img-skill' alt={skills.category}/>
-            </div>
-            <div>
-              <img src={skills.image_one.url} className='img-skill' alt={skills.category}/>
-            </div>
-          </Slider>
+            </li>
+            <li>
+              <img src={skills.image_three.url} className='img-skill' alt={skills.category}/>
+            </li>
+            <li>
+              <img src={skills.image_four.url} className='img-skill' alt={skills.category}/>
+            </li>
+            <li>
+              <img src={skills.image_five.url} className='img-skill' alt={skills.category}/>
+            </li>
+          </ul>
         </article>
     );
   }
 }
 
-export default Content;
+export default DesignSkills;

@@ -24,12 +24,12 @@ class AboutMe extends React.Component {
   }
 
   render() {
-    const {aboutInfo, activeTimePeriod, loading} = this.props.store.aboutMeStore;
+    const {aboutInfo, activeTimePeriod, loading, timePeriodId} = this.props.store.aboutMeStore;
     const timelineInfo = aboutInfo.filter(info => (
       info.acf.category === 'timeline'
     ));
     const active = activeTimePeriod;
-    const props = {aboutInfo, timelineInfo, active, loading};
+    const props = {aboutInfo, timelineInfo, active, loading, timePeriodId};
     return(
       <div>
         <hgroup className="flex-container center column">

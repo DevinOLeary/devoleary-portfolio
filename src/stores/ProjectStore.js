@@ -5,7 +5,7 @@ class ProjectStore {
   @observable projectInfo = []
   @observable activeProject = ''
   @observable loading = true
-  @observable activeCategory = ''
+  @observable activeCategory = 'all'
 
   @action loadProjects(){
     this.picInfo = []
@@ -21,7 +21,7 @@ class ProjectStore {
   @computed get filteredProjects(){
     const active = this.activeCategory;
     return(
-      active === '' ? this.projectInfo.filter(proj => (
+      active === 'all' ? this.projectInfo.filter(proj => (
         proj.acf.category.toLowerCase() !== "skills"
       )) :
       this.projectInfo.filter(proj => (

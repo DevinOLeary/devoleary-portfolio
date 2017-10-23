@@ -26,17 +26,17 @@ class DevAndDesign extends React.Component {
   }
 
   render() {
-    const {projectInfo, activeProject, loading, filteredProjects} = this.props.store.projectStore;
+    const {projectInfo, activeProject, loading, filteredProjects, activeCategory} = this.props.store.projectStore;
     let openProject = (projectInfo.length > 0 && activeProject.length > 0 &&
       projectInfo.find(info => (
         info.id.toString() === activeProject
       ))
     );
-    let openInfo = (openProject.acf);
-    const props = {projectInfo, activeProject, loading, openInfo, filteredProjects}
+    const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, openProject}
 
     return(
       <main className="body-container">
+
         <hgroup>
           <h2 className="text-center">my work</h2>
           <br/>

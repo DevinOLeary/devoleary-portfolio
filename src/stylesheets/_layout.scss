@@ -84,6 +84,7 @@ h1,h2,h3,h4,h5 {
   }
 
 
+
 //elements
 
 
@@ -100,6 +101,7 @@ h1,h2,h3,h4,h5 {
   transform: rotateZ(270deg);
   height: 10px;
   aside{
+    width: 50vh;
     position: absolute;
     bottom: 15px;
     ul{
@@ -131,9 +133,11 @@ h1,h2,h3,h4,h5 {
 .content-body_read {
   width: 80%;
   height: auto;
-  overflow:visible;
+  overflow:scroll;
   max-width: 600px;
-  min-width: 400px;
+  min-width: 300px;
+  max-height: 80vh;
+  background-color: $background-white;
 }
 .body-section {
   margin-bottom: 50px;
@@ -150,6 +154,9 @@ h1,h2,h3,h4,h5 {
 }
 .timeline-header {
   padding: 1em;
+}
+.project_cat-header {
+  margin: 5%;
 }
 .timeline-body:first-child{
   margin-left:0px;
