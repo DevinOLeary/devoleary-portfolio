@@ -1,11 +1,9 @@
 import React from 'react';
 import {Link} from 'react-scroll';
-import {TransitionGroup} from 'react-transition-group';
 
 
 //components
 import CategoryHeader from '../small-components/CategoryHeader';
-import ContentFadeIn from '../small-components/ContentFadeIn';
 
 
 

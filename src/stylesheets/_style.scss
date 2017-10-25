@@ -13,20 +13,20 @@ p {
   font-family: $read-text;
 }
 h1 {
-  font-size: 64px;
-}
-h2 {
   font-size: 48px;
 }
-h3 {
+h2 {
   font-size: 36px;
 }
-h4 {
+h3 {
   font-size: 24px;
 }
-p {
+h4 {
   font-size: 18px;
-  line-height: 27px;
+}
+p {
+  font-size: 16px;
+  line-height: 24px;
 }
 ul, li {
   list-style-type: none;
@@ -68,7 +68,10 @@ button:focus {
 
 
 .active {
-  color: $text-active;
+  .link-underline {
+    width: 80%;
+    opacity: 1;
+  }
 }
 
 

@@ -14,6 +14,7 @@ const ProjectContainer = (props) => {
 
     return(
       <section className="flex-container center column">
+
         <DesignSkills {...props}/>
         <Element name='projectPane'><div></div></Element>
           <TransitionGroup>

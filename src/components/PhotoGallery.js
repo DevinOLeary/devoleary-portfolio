@@ -19,7 +19,7 @@ function imagesLoaded(parentNode) {
 
 @inject('store')
 @observer
-class PicGallery extends React.Component {
+class PhotoGallery extends React.Component {
   constructor(props){
     super(props);
     this.props.store.photographyStore.page = this.props.title.toLowerCase();
@@ -90,4 +90,4 @@ class PicGallery extends React.Component {
 }
 
 
-export default PicGallery;
+export default PhotoGallery;

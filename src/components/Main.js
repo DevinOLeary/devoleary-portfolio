@@ -20,7 +20,8 @@ const Main = withRouter(({location}) => (
       <CSSTransition
         key={location.key}
         classNames="fade"
-        timeout={1200}>
+        timeout={500}
+        >
           <Switch location={location}>
               <Route path="/" exact component={HomePage}/>
               <Route path="/photography" component={Photography}/>

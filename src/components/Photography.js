@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 
 //components
 import PhotoCategories from './presentational-components/PhotoCategories';
-import PicGallery from './PicGallery';
+import PhotoGallery from './PhotoGallery';
 import ContentFadeIn from './small-components/ContentFadeIn';
 
 
@@ -29,8 +29,8 @@ class Photography extends React.Component{
       <ContentFadeIn in={!loading}>
       <Switch>
         <Route exact path="/photography" component={PhotoCategories}/>
-        <Route path="/photography/category_action" exact render={props => <PicGallery title="Action" {...props} />}/>
-        <Route path="/photography/category_travel" exact render={props => <PicGallery title="Travel" {...props} />}/>
+        <Route path="/photography/category_action" exact render={props => <PhotoGallery title="Action" {...props} />}/>
+        <Route path="/photography/category_travel" exact render={props => <PhotoGallery title="Travel" {...props} />}/>
       </Switch>
       </ContentFadeIn>
       </div>

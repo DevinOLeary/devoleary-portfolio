@@ -2,7 +2,7 @@ a:hover {
   cursor: pointer;
 }
 .button-secondary {
-  padding: 20px;
+  padding: 10px;
   background-color: $background-white;
   border: 3px solid $background-secondary;
   font-size: 18px;
@@ -28,14 +28,8 @@ button:hover {
   background-color: $button-primary-hover;
   color: $text-inverse;
 }
-
-.slick-prev:before, .slick-next:before {
-  color: $background-white;
-  font-size: 36px;
-}
-.slick-prev {
-  left: -50px;
-}
-.slick-next {
-  right: -50px;
+.button-exit {
+  color: $text-inverse;
+  display: inline-block;
+  margin:10%;
 }

@@ -1,37 +1,38 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import MobileMenu from './presentational-components/MobileMenu';
 
+//components
+import MobileMenu from './presentational-components/MobileMenu';
 
 class Header extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      windowSize: 'mobile',
-      menuOpen: false
+      fullSize: false,
+      showMenu: false
     }
   }
 
-
-  updateOnResize(){
-    if(window.innerWidth < 700){
-      this.setState({windowSize: 'mobile'})
-    } else {this.setState({windowSize: 'desktop'})}
+  componentWillMount(){
+    window.addEventListener('resize', this.updateWidth.bind(this));
   }
-
-  openMobileMenu(e){
-    e.preventDefault();
-    let openStatus = this.state.menuOpen;
-    this.setState({menuOpen: !openStatus});
-  }
-
   componentDidMount(){
-    this.updateOnResize();
-    window.addEventListener("resize", this.updateOnResize.bind(this));
+    this.updateWidth();
+  }
+  componentWillUnmount(){
+    window.removeEventListener("resize", this.updateWidth.bind(this));
+    this.toggleMenu();
   }
 
-  componentWillUnmount(){
-    window.removeEventListener("resize", this.updateOnResize.bind(this));
+  updateWidth(){
+    if(window.innerWidth < 600){
+      this.setState({fullSize: false})
+    }else{this.setState({fullSize: true})}
+  }
+
+  toggleMenu(){
+    const showStatus = this.state.showMenu
+    this.setState({showMenu: !showStatus})
   }
 
   render(){
@@ -39,12 +40,12 @@ class Header extends React.Component{
       backgroundColor: `rgba(223,171,28,1)`,
       borderColor: `rgba(223,171,28,1)`
     }
-    if(this.state.windowSize === 'mobile'){
+    if(!this.state.fullSize){
       return(
         <header className="mobile_menu-header">
-          <a onClick={this.openMobileMenu.bind(this)}><h4>menu</h4></a>
+          <a onClick={this.toggleMenu.bind(this)}><h3>menu</h3></a>
           <div>
-            <MobileMenu isOpen={this.state.menuOpen}/>
+            <MobileMenu openStatus={this.state.showMenu} toggleMenu={this.toggleMenu.bind(this)}/>
           </div>
         </header>
       )
