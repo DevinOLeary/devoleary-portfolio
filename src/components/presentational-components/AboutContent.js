@@ -40,7 +40,7 @@ const AboutContent = (props) => {
               className="headshot"/>
           </section>
           <section className="body-section ">
-            <hgroup className="header-offset">
+            <hgroup className="header-offset flex-container column">
               <h2 className="text-center">my passions</h2>
               <hr className="divider-colored"/>
             </hgroup>
