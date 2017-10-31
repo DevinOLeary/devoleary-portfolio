@@ -1,14 +1,14 @@
 import React from 'react';
+import {TransitionGroup} from 'react-transition-group';
 
 //components
 import TimelineHeader from './TimelineHeader';
 import LoadingPane from '../small-components/LoadingPane';
+import ContentFadeIn from '../small-components/ContentFadeIn';
+import TimelineContent from './TimelineContent';
 
 const AboutContent = (props) => {
   if(props.loading === true){return <LoadingPane/>}else{
-    const activeDescription = (props.active.length > 0 &&
-      props.active[0].acf.time_description
-    )
     const headshot = props.aboutInfo.find(info => (
       info.acf.category ===  'headshot'
     ));
@@ -21,17 +21,17 @@ const AboutContent = (props) => {
               <TimelineHeader {...props} loadTime={props.loadTime}/>
               <div className="flex-container center column">
                   {props.timelineInfo.length > 0 &&
-                  props.active.length > 0 ?
-                    <article className="content-body_read">
-                      <h2>{props.active[0].acf.time_title}</h2>
-                      <h4>{props.active[0].acf.date_range}</h4>
-                      <p>{activeDescription}</p>
-                    </article>
+                    <TransitionGroup>
+                    {props.active.length > 0 ? <TimelineContent active={props.active[0]}/>
                     :
-                    <article className="content-body_read">
-                      <p>I believe we create our own purpose in life; one that ultimately brings us the most satisfaction and fulfillment. The scope that we apply to this purpose correlates with the level of satisfaction and fulfillment returned, so it only makes sense that we live with the greatest scope possible. We can't single handedly save the world, but we can each play our part to lead meaningful, intentional lives, and build tools that can be used to maximize environmental, societal, and personal wellbeing. I'm devoting my life to learning and collaborating with likeminded innovators to build the tools to achieve this ultimate purpose.
-                      </p>
-                    </article>
+                    <ContentFadeIn>
+                      <article className="content-body_read">
+                        <p>I believe we create our own purpose in life; one that ultimately brings us the most satisfaction and fulfillment. The scope that we apply to this purpose correlates with the level of satisfaction and fulfillment returned, so it only makes sense that we live with the greatest scope possible. We can't single handedly save the world, but we can each play our part to lead meaningful, intentional lives, and build tools that can be used to maximize environmental, societal, and personal wellbeing. I'm devoting my life to learning and collaborating with likeminded innovators to build the tools to achieve this ultimate purpose.
+                        </p>
+                      </article>
+                    </ContentFadeIn>
+                    }
+                    </TransitionGroup>
                 }
               </div>
             </div>

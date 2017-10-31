@@ -11,6 +11,10 @@ class DevAndDesign extends React.Component {
 
   componentWillMount(){
     this.props.store.projectStore.loadProjects()
+
+  }
+
+  componentDidMount(){
     this.props.store.projectStore.activeProject = ''
   }
 

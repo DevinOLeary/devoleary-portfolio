@@ -4,14 +4,12 @@
 
 .fade-enter-active {
   opacity: 1;
-  transition: all 700ms;
-  transition-delay: 700ms;
+  transition: all 1000ms;
 }
 
 .fade-exit {
   opacity: 1;
   transition: 800ms;
-  transition-delay: 300ms;
 }
 .fade-exit-active {
   opacity: 0;

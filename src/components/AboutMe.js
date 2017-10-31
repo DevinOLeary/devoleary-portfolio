@@ -20,7 +20,7 @@ class AboutMe extends React.Component {
 
   //set timePeriodId to the clicked id
   loadTime = (id) => {
-    this.props.store.aboutMeStore.timePeriodId = id.toString();
+    this.props.store.aboutMeStore.loadNewTimePeriod(id);
   }
 
   render() {

@@ -130,9 +130,9 @@
   object-fit: cover;
 }
 .img-skill {
-  height: 100px;
+  height: 75px;
   width: auto;
-  margin: 30px;
+  margin: 10px;
 }
 .img-social {
   width: 50px;
@@ -147,10 +147,17 @@
   box-shadow: 0px 0px 5px;
   align-self: flex-end;
 }
-.homepage-banner {
-  background-image: url('../images/home-banner.jpg');
-  background-size: cover;
-  background-position: center;
+
+.img-full_banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index:0;
+  object-fit: cover;
 }
 .project_list_img-overlay{
   position: absolute;
