@@ -24,6 +24,7 @@ h1,h2,h3,h4,h5 {
   .flex-container {
     display: flex;
     position: relative;
+    z-index: 100;
   }
   .center {
     justify-content: center;
@@ -89,7 +90,13 @@ h1,h2,h3,h4,h5 {
     width:80%;
     margin: 15vh 0;
   }
-
+.homepage-container {
+  height: 70vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 
 
 //elements

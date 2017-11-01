@@ -21,7 +21,8 @@
     color: $text-active;
   }
   .headshot {
-    height: 300px;
+    height: 400px;
+    width: 400px;
   }
   .img-skill {
     height: 100px;
@@ -34,9 +35,8 @@
     background-color: $background-secondary;
     color: $text-inverse;
   }
-  .dash-vertical {
-    border-color: $background-primary;
-    background-color: $background-primary;
+  .vertical-dash {
+    font-size: 36px;
   }
   .divider-colored {
     border-color: $background-primary;

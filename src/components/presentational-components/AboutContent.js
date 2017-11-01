@@ -26,8 +26,23 @@ const AboutContent = (props) => {
                     :
                     <ContentFadeIn>
                       <article className="content-body_read">
-                        <p>I believe we create our own purpose in life; one that ultimately brings us the most satisfaction and fulfillment. The scope that we apply to this purpose correlates with the level of satisfaction and fulfillment returned, so it only makes sense that we live with the greatest scope possible. We can't single handedly save the world, but we can each play our part to lead meaningful, intentional lives, and build tools that can be used to maximize environmental, societal, and personal wellbeing. I'm devoting my life to learning and collaborating with likeminded innovators to build the tools to achieve this ultimate purpose.
+                        <h2 className="text-center">#lifegoals</h2>
+
+                        <br/>
+                        <p>
+                          Live intentionally
+                          <span className="vertical-dash">|</span>
+                          Continually add tools
+                          <span className="vertical-dash">|</span>
+                          Maximize experiences
+                          <span className="vertical-dash">|</span>
+                          Go a step farther
+                          <span className="vertical-dash">|</span>
+                          Make the steps count
                         </p>
+                        <br/>
+                        <h3>I am an essentialist,</h3>
+                        <p>filling my life with next level experiences, meaningful relationships, and passionate work, whatever it may be. Life is too short to not live exceptionally.</p>
                       </article>
                     </ContentFadeIn>
                     }
