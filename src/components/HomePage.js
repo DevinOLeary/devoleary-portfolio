@@ -1,27 +1,74 @@
 import React from 'react';
+import {TweenLite, TimelineLite} from 'gsap';
+import GSAP from 'react-gsap-enhancer';
+
 import Nav from './Nav';
 import bannerImage from '../images/home-banner.jpg';
+import LoadingPane from './small-components/LoadingPane';
 
+function titleFadeIn(){
+  return TweenLite.fromTo('#titleName', 1, {opacity: 0, y: 0},{opacity: 1, y: 30, delay: 1}),
+        TweenLite.fromTo('#titleQuote', 1, {opacity: 0, y: 0}, {opacity: 1, y: 30, delay: 1})
+}
 
+function firstBoxDrawAnimation(){
+  let tl = new TimelineLite();
+  TweenLite.set("#box", {visibility: "visible"})
+    return tl.fromTo(".l1", 1, {height:0}, {height:193, ease:"Power1.easeIn", delay: .5})
+    .fromTo(".l4", 3, {width:0}, {width:'200%',ease: "Power0.easeNone"})
+
+};
+function secondBoxDrawAnimation(){
+  let tl = new TimelineLite();
+  return tl.fromTo(".l2", 3, {width:0}, {width:'200%', ease:"Power1.easeIn" , delay: .5})
+};
 
 class HomePage extends React.Component {
-  render() {
-    const banner = {
-      backgroundImage: `url(${bannerImage})`,
-      backgroundSize: `cover`
+  constructor(props){
+    super(props);
+    this.state = {
+      loading: true
     }
-    return(
-      <div style={banner}>
-        <header className="flex-container column space-between body-container">
-          <hgroup className="flex-container center column text-inverse">
-            <h1>Devin O&#8217;Leary</h1>
-            <h3>Mindful Creations</h3>
-          </hgroup>
-          <Nav />
-        </header>
+  }
+
+  loaded(){
+    this.setState({loading: false});
+    this.addAnimation(firstBoxDrawAnimation);
+    this.addAnimation(secondBoxDrawAnimation);
+    this.addAnimation(titleFadeIn);
+    }
+
+  render() {
+    let isLoading = this.state.loading;
+    if(isLoading){return (
+      <div>
+        <LoadingPane/>
+        <img src={bannerImage} alt="homepage" className="img-full_banner hidden" onLoad={this.loaded.bind(this)}/>
       </div>
-    );
+    )
+      }else{
+      return(
+        <div>
+          <div className="overlay-home_banner">
+          </div>
+          <img src={bannerImage} alt="homepage" className="img-full_banner"/>
+          <header className="flex-container column space-between homepage-container">
+            <hgroup className="flex-container center column text-inverse">
+              <div className="title-box">
+                <span className="l1"></span>
+                <span className="l2"></span>
+                <span className="l3"></span>
+                <span className="l4"></span>
+                <h1 id="titleName">Devin O&#8217;Leary</h1>
+                <h4 id="titleQuote">Mindful Creations</h4>
+              </div>
+            </hgroup>
+            <Nav />
+          </header>
+        </div>
+      );
+    }
   }
 }
 
-export default HomePage;
+export default GSAP()(HomePage);

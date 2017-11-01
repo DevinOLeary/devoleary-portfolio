@@ -17,6 +17,9 @@ class AboutMeStore{
     .catch(error => console.log(error))
     }
 
+    @action loadNewTimePeriod(id){
+      this.timePeriodId = id.toString();
+    }
 
 
   @computed get activeTimePeriod(){

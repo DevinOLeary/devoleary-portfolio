@@ -3,14 +3,15 @@ body{
 }
 
 //text
-h1, h2, h3, h4, h5, a{
+h1, h2{
   font-family: $title-text;
   font-weight: 300;
   color: inherit;
   transition: .3s;
 }
-p {
+h3, h4, h5, p, a {
   font-family: $read-text;
+  font-weight: 300;
 }
 h1 {
   font-size: 48px;
@@ -25,7 +26,7 @@ h4 {
   font-size: 18px;
 }
 p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
 }
 ul, li {
@@ -47,6 +48,10 @@ a {
 }
 button:focus {
   outline: none;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 //elements
@@ -79,4 +84,9 @@ button:focus {
  a {
    margin: .2em;
  }
+}
+
+#titleName, #titleQuote {
+  opacity: 0;
+  margin-left: 30px;
 }

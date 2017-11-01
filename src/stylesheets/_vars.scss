@@ -6,15 +6,16 @@ $blue-trans: rgba(72,136,176,.7);
 $gold: rgba(223,171,28,1);
 $gold-trans: rgba(223,171,28,.7);
 $white: rgb(255,255,255);
-$white-trans: rgba(255,255,255,.9);
+$white-trans: rgba(255,255,255,.2);
 $transparent: rgba(0,0,0,0);
 $grey: rgb(90,90,90);
-$grey-trans: rgba(90,90,90,.7);
+$grey-trans: rgba(90,90,90,.1);
+$green-trans: rgba(72, 255, 162, 0.4);
 
 
 //backgrounds
 $background-primary: $blue;
-$background-primary-trans: $blue-trans;
+$background-primary-trans: $green-trans;
 $background-secondary: $gold;
 $background-secondary-trans: $gold-trans;
 $background-white: $white;
@@ -22,12 +23,14 @@ $background-white-trans: $white-trans;
 $background-grey: $grey;
 $background-grey-trans: $grey-trans;
 $background-transparent: $transparent;
+$background-overlay: $grey-trans;
+
 
 //text
 $text-inverse: $white;
 $text-default: $grey;
-$title-text: 'Dosis', sans-serif;
-$read-text: 'Lustria', serif;
+$title-text: 'Libre Franklin', sans-serif;
+$read-text: 'Libre Franklin', serif;
 $text-active: $gold;
 
 //buttons
@@ -38,4 +41,4 @@ $button-primary-hover: $blue-light;
 
 
 //Imports
-@import url('https://fonts.googleapis.com/css?family=Dosis|Lustria');
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:300,400');
