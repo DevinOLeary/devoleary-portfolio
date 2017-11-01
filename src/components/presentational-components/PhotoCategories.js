@@ -9,7 +9,7 @@ import LoadingPane from '../small-components/LoadingPane';
 @inject('store')
 @observer
 class PhotoCategories extends React.Component {
-  render(){
+  render(props){
     let loading = this.props.store.photographyStore.loading;
     if(loading === true){ return <LoadingPane/>}else {
       let picInfo = this.props.store.photographyStore.picInfo;
@@ -29,12 +29,12 @@ class PhotoCategories extends React.Component {
           <div className="flex-container row even-spacing">
             <div className="text-center header-pic_category">
               <NavLink to="/photography/category_action">
-                <PicCategory image={actionImage} title="Action"/>
+                <PicCategory image={actionImage} title="Action" {...props}/>
               </NavLink>
             </div>
             <div className="text-center header-pic_category">
               <NavLink to="/photography/category_travel">
-                <PicCategory image={travelImage} title="Travel"/>
+                <PicCategory image={travelImage} title="Travel" {...props}/>
               </NavLink>
             </div>
           </div>

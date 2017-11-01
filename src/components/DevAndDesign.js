@@ -5,6 +5,7 @@ import {inject, observer} from 'mobx-react';
 import ProjectContainer from './presentational-components/ProjectContainer';
 import ContentFadeIn from './small-components/ContentFadeIn';
 
+
 @inject('store')
 @observer
 class DevAndDesign extends React.Component {
@@ -15,7 +16,7 @@ class DevAndDesign extends React.Component {
   }
 
   componentDidMount(){
-    this.props.store.projectStore.activeProject = ''
+    this.props.store.projectStore.activeProject = '';
   }
 
   updateCategoryList = (category) => {

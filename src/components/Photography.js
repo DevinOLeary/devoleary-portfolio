@@ -26,13 +26,13 @@ class Photography extends React.Component{
     const props = {picInfo, page, loading, picSort};
     return(
       <div className="body-container">
-      <ContentFadeIn in={!loading}>
+
       <Switch>
-        <Route exact path="/photography" component={PhotoCategories}/>
+        <Route exact path="/photography" exact render={props => <PhotoCategories {...props}/>}/>
         <Route path="/photography/category_action" exact render={props => <PhotoGallery title="Action" {...props} />}/>
         <Route path="/photography/category_travel" exact render={props => <PhotoGallery title="Travel" {...props} />}/>
       </Switch>
-      </ContentFadeIn>
+    
       </div>
     );
   }

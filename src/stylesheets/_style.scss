@@ -7,7 +7,6 @@ h1, h2{
   font-family: $title-text;
   font-weight: 300;
   color: inherit;
-  transition: .3s;
 }
 h3, h4, h5, p, a {
   font-family: $read-text;
@@ -84,9 +83,4 @@ button:focus {
  a {
    margin: .2em;
  }
-}
-
-#titleName, #titleQuote {
-  opacity: 0;
-  margin-left: 30px;
 }

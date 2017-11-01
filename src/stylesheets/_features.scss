@@ -114,6 +114,7 @@
 .img-categories {
   width: 45vw;
   min-width: 400px;
+  opacity: 0;
 }
 .img-project_preview {
   width:40%;
@@ -143,6 +144,7 @@
   margin-top: 10vw;
   box-shadow: 0px 0px 5px;
   align-self: flex-end;
+  opacity: 0;
 }
 
 .img-full_banner {
@@ -187,7 +189,7 @@
 .title-box{
 display: block;
 width: 50%;
-height: 200px;
+height: 250px;
 position: relative;
   .l1,.l2,.l3,.l4 {
   position: absolute;
@@ -217,4 +219,9 @@ position: relative;
   width: 200px;
   height: 7px;
 }
+}
+#titleName, #titleQuote {
+  opacity: 0;
+  margin-left: 20%;
+  margin-top: 20px;
 }

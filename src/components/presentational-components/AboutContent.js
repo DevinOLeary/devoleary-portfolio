@@ -6,12 +6,10 @@ import TimelineHeader from './TimelineHeader';
 import LoadingPane from '../small-components/LoadingPane';
 import ContentFadeIn from '../small-components/ContentFadeIn';
 import TimelineContent from './TimelineContent';
+import HeadShot from './HeadShot';
 
 const AboutContent = (props) => {
   if(props.loading === true){return <LoadingPane/>}else{
-    const headshot = props.aboutInfo.find(info => (
-      info.acf.category ===  'headshot'
-    ));
     return (
       <main className="body-container">
         <div className="triangle"></div>
@@ -50,9 +48,7 @@ const AboutContent = (props) => {
                 }
               </div>
             </div>
-              <img src={headshot._embedded['wp:featuredmedia']["0"].source_url}
-              alt={headshot.acf.category}
-              className="headshot"/>
+              <HeadShot {...props}/>
           </section>
           <section className="body-section ">
             <hgroup className="header-offset flex-container column">

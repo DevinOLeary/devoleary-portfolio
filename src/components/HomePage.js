@@ -7,20 +7,23 @@ import bannerImage from '../images/home-banner.jpg';
 import LoadingPane from './small-components/LoadingPane';
 
 function titleFadeIn(){
-  return TweenLite.fromTo('#titleName', 1, {opacity: 0, y: 0},{opacity: 1, y: 30, delay: 1}),
-        TweenLite.fromTo('#titleQuote', 1, {opacity: 0, y: 0}, {opacity: 1, y: 30, delay: 1})
+  return (
+    TweenLite.fromTo('#titleName', 1.5, {opacity: 0, y: 0},{opacity: 1, y: 40, delay: 1}),
+    TweenLite.fromTo('#titleQuote', 1.5, {opacity: 0, y: 0}, {opacity: 1, y: 50, delay: 1.3})
+  );
+
 }
 
 function firstBoxDrawAnimation(){
   let tl = new TimelineLite();
   TweenLite.set("#box", {visibility: "visible"})
-    return tl.fromTo(".l1", 1, {height:0}, {height:193, ease:"Power1.easeIn", delay: .5})
-    .fromTo(".l4", 3, {width:0}, {width:'200%',ease: "Power0.easeNone"})
+    return tl.fromTo(".l1", 1, {height:0}, {height:243, ease:"Power1.easeIn", delay: .5})
+    .fromTo(".l4", 3, {width:0}, {width:'150%',ease: "Power1.easeOut"})
 
 };
 function secondBoxDrawAnimation(){
   let tl = new TimelineLite();
-  return tl.fromTo(".l2", 3, {width:0}, {width:'200%', ease:"Power1.easeIn" , delay: .5})
+  return tl.fromTo(".l2", 4, {width:0}, {width:'150%', ease:"Power1.easeInOut" , delay: .5})
 };
 
 class HomePage extends React.Component {

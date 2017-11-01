@@ -11,13 +11,17 @@ $transparent: rgba(0,0,0,0);
 $grey: rgb(90,90,90);
 $grey-trans: rgba(90,90,90,.1);
 $green-trans: rgba(72, 255, 162, 0.4);
+$green: #81c784;
+$green-light: #89FACE;
+$red: #7A3754;
+$red-trans: rgba(122,55,84,.3);
 
 
 //backgrounds
-$background-primary: $blue;
+$background-primary: $green;
 $background-primary-trans: $green-trans;
-$background-secondary: $gold;
-$background-secondary-trans: $gold-trans;
+$background-secondary: $red;
+$background-secondary-trans: $red-trans;
 $background-white: $white;
 $background-white-trans: $white-trans;
 $background-grey: $grey;
@@ -31,10 +35,10 @@ $text-inverse: $white;
 $text-default: $grey;
 $title-text: 'Libre Franklin', sans-serif;
 $read-text: 'Libre Franklin', serif;
-$text-active: $gold;
+$text-active: $red;
 
 //buttons
-$button-primary: $blue;
+$button-primary: $red;
 $button-primary-hover: $blue-light;
 
 
