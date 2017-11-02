@@ -28,11 +28,11 @@ class Photography extends React.Component{
       <div className="body-container">
 
       <Switch>
-        <Route exact path="/photography" exact render={props => <PhotoCategories {...props}/>}/>
+        <Route path="/photography" exact render={props => <PhotoCategories {...props}/>}/>
         <Route path="/photography/category_action" exact render={props => <PhotoGallery title="Action" {...props} />}/>
         <Route path="/photography/category_travel" exact render={props => <PhotoGallery title="Travel" {...props} />}/>
       </Switch>
-    
+
       </div>
     );
   }

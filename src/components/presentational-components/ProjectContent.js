@@ -7,7 +7,7 @@ const ProjectContent = ({children,...props}) => {
     <CSSTransition
     {...props}
     timeout={1500}
-    classNames='open'>
+    classNames='fade'>
       <section className="display-box flex-container center column">
           {children}
       </section>

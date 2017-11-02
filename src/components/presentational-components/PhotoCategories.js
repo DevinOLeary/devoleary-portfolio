@@ -29,7 +29,7 @@ class PhotoCategories extends React.Component {
           <div className="flex-container row even-spacing">
             <div className="text-center header-pic_category">
               <NavLink to="/photography/category_action">
-                <PicCategory image={actionImage} title="Action" {...props}/>
+                <PicCategory image={actionImage} title="Action"/>
               </NavLink>
             </div>
             <div className="text-center header-pic_category">
