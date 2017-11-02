@@ -64,7 +64,7 @@
 }
 .display-box{
   height: auto;
-  width: 60%;
+  width: 80%;
   min-width: 350px;
   background-color: $background-white;
   box-shadow: 0px 0px 5px;
@@ -144,8 +144,7 @@
   margin-top: 10vw;
   box-shadow: 0px 0px 5px;
   align-self: flex-end;
-  opacity: 0;
-  transition: .4s;
+  transition: 1s;
 }
 
 .img-full_banner {

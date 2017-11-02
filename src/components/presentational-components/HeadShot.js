@@ -7,12 +7,12 @@ class HeadShot extends React.Component {
   constructor(props){
     super(props);
     this.state= {
-      pic:{}
+      pic:{opacity: 0}
     }
   }
 
   loadPic(){
-    this.setState({pic: {opacity: 1, transition: '1s'}});
+    this.setState({pic: {opacity: 1}});
   }
   render(props){
     const headshot = this.props.aboutInfo.find(info => (

@@ -5,7 +5,7 @@ import {Route, Switch} from 'react-router-dom';
 //components
 import PhotoCategories from './presentational-components/PhotoCategories';
 import PhotoGallery from './PhotoGallery';
-import ContentFadeIn from './small-components/ContentFadeIn';
+
 
 
 @inject('store')

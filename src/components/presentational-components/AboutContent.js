@@ -4,7 +4,6 @@ import React from 'react';
 //components
 import TimelineHeader from './TimelineHeader';
 import LoadingPane from '../small-components/LoadingPane';
-import ContentFadeIn from '../small-components/ContentFadeIn';
 import TimelineContent from './TimelineContent';
 import HeadShot from './HeadShot';
 
@@ -21,10 +20,8 @@ const AboutContent = (props) => {
                   {props.timelineInfo.length > 0 &&
                   props.active.length > 0 ? <TimelineContent active={props.active[0]}/>
                     :
-
                       <article className="content-body_read">
                         <h2 className="text-center">#lifegoals</h2>
-
                         <br/>
                         <p>
                           Live intentionally

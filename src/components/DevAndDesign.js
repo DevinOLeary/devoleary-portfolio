@@ -1,9 +1,11 @@
 import React from 'react';
 import {inject, observer} from 'mobx-react';
+import {TimelineLite, TweenLite} from 'gsap';
 
 //components
-import ProjectContainer from './presentational-components/ProjectContainer';
+import ProjectListContainer from './presentational-components/ProjectListContainer';
 import ContentFadeIn from './small-components/ContentFadeIn';
+
 
 
 @inject('store')
@@ -25,9 +27,22 @@ class DevAndDesign extends React.Component {
 
   isOpen = (id) => {
     this.props.store.projectStore.activeProject = id.toString();
+
   };
+  openingAnimation(){
+    let box = document.getElementById('boxItem');
+    return TweenLite.fromTo(box, 2, {height: '0px', opacity:0, y:-20}, {height: 'auto', opacity: 1, y:0, delay: 1});
+  }
   closeProject = () => {
-    this.props.store.projectStore.activeProject = '';
+    setTimeout(() => {
+      this.props.store.projectStore.activeProject = '';
+    }, 800)
+    this.closingAnimation();
+  }
+  closingAnimation(){
+    let box = document.getElementById('boxItem');
+    let tl = new TimelineLite();
+    return tl.to(box.children, .4, {opacity:0}).to(box, .4, {height: '0px', opacity: 0});
   }
 
   render() {
@@ -47,7 +62,7 @@ class DevAndDesign extends React.Component {
           <br/>
         </hgroup>
         <ContentFadeIn in={!loading}>
-          <ProjectContainer {...props} closeProject={this.closeProject} isOpen={this.isOpen} updateCategoryList={this.updateCategoryList}/>
+          <ProjectListContainer {...props} closeProject={this.closeProject} isOpen={this.isOpen} updateCategoryList={this.updateCategoryList}/>
         </ContentFadeIn>
       </main>
 

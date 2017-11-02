@@ -1,5 +1,6 @@
 import React from 'react';
 import {Element} from 'react-scroll';
+import {TransitionGroup} from 'react-transition-group';
 
 
 //components
@@ -9,21 +10,22 @@ import LoadingPane from '../small-components/LoadingPane';
 import DesignProject from './DesignProject';
 import WebProject from './WebProject';
 import AnimationProject from './AnimationProject';
+import SingleProjectContent from './SingleProjectContent';
 
 
-const ProjectContainer = (props) => {
-
+const ProjectListContainer = (props) => {
+//conditionally check the active project status and set contentWindow = to the active object
   let contentWindow = ''
     if(props.activeProject.length > 0){
     let projectContent= '';
     if(props.openProject.acf.category === "Design"){
-      projectContent = <DesignProject info={props.openProject} closeProject={props.closeProject}/>
+      projectContent = <SingleProjectContent closeProject={props.closeProject}><DesignProject info={props.openProject}/></SingleProjectContent>
     } else if(props.openProject.acf.category === "Development"){
-      projectContent = <WebProject info={props.openProject} closeProject={props.closeProject}/>
+      projectContent = <SingleProjectContent closeProject={props.closeProject}><WebProject info={props.openProject}/></SingleProjectContent>
     } else if(props.opProject.acf.category === "Animation"){
-      projectContent = <AnimationProject info={props.openProject} closeProject={props.closeProject}/>
+      projectContent = <SingleProjectContent closeProject={props.closeProject}><AnimationProject info={props.openProject}/></SingleProjectContent>
     } else{
-      projectContent = null;
+      projectContent = '';
     }
     contentWindow = projectContent
   }
@@ -34,13 +36,13 @@ const ProjectContainer = (props) => {
 
         <DesignSkills {...props}/>
         <Element name='projectPane'><div></div></Element>
-
-          {contentWindow}
-
+        <TransitionGroup>
+          {contentWindow === '' ? <div/> : contentWindow}
+        </TransitionGroup>
         <ProjectList {...props} isOpen={props.isOpen} updateCategoryList={props.updateCategoryList}/>
       </section>
     )
   }
 }
 
-export default ProjectContainer;
+export default ProjectListContainer;
