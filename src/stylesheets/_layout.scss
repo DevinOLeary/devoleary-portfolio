@@ -114,6 +114,7 @@ h1,h2,h3,h4,h5 {
   bottom:30vh;
   transform: rotateZ(270deg);
   height: 10px;
+  z-index: 1000;
   aside{
     width: 50vh;
     position: absolute;

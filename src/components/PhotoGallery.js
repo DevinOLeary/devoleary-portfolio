@@ -5,7 +5,7 @@ import {Element} from 'react-scroll';
 
 //components
 import SideMenu from './presentational-components/SideMenu';
-import ContentFadeIn from './small-components/ContentFadeIn';
+
 
 function imagesLoaded(parentNode) {
   const imgElements = parentNode.querySelectorAll('img');
@@ -69,13 +69,13 @@ class PhotoGallery extends React.Component {
             <h1>{this.props.title}</h1>
           </hgroup>
           <div style = {this.getStyle()}>
-          <ContentFadeIn in={!loading}>
+
             <section className="flex-container center column">
               <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
                 {list}
               </ul>
             </section>
-          </ContentFadeIn>
+          
           </div>
         </main>
         <div className="flex-container center mini-block">

@@ -1,24 +1,27 @@
 import React from 'react';
-import GSAP from 'react-gsap-enhancer';
-import {TweenLite} from 'gsap';
+
 
 import LoadingPane from '../small-components/LoadingPane';
 
-function imageFadeIn(){
-  return TweenLite.to('.img-categories', 1.5,{opacity: 1, y: 20, delay: 2})
-}
 
 class PicCategory extends React.Component {
-
+  constructor(props){
+    super(props);
+    this.state= {
+      pic:{
+        opacity: 0
+      }
+    }
+  }
 
   loaded(){
-    this.addAnimation(imageFadeIn);
+    this.setState({pic: {opacity: 1, transition: '1s'}});
   }
 
   render(props){
     const coloredUnderline = {
-      backgroundColor: `rgba(223,171,28,1)`,
-      borderColor: `rgba(223,171,28,1)`
+      backgroundColor: `#872341`,
+      borderColor: `#872341`
     }
     return(
       <div className="hover-highlight">
@@ -27,10 +30,10 @@ class PicCategory extends React.Component {
           <hr className="link-underline" style={coloredUnderline}/>
         </hgroup>
         {this.props.loading ? <LoadingPane/> :
-        <img className="img-categories" src={this.props.image} alt= {this.props.title} onLoad={this.loaded.bind(this)}/>}
+        <img className="img-categories" style={this.state.pic} src={this.props.image} alt= {this.props.title} onLoad={this.loaded.bind(this)}/>}
       </div>
     );
   }
 }
 
-export default GSAP()(PicCategory);
+export default PicCategory;

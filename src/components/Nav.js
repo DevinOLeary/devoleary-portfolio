@@ -2,8 +2,8 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 
 const whiteUnderline = {
-  backgroundColor: `white`,
-  borderColor: `white`
+  backgroundColor: `rgba(240, 89, 65, .6)`,
+  borderColor: `rgba(240, 89, 65, .1)`
 }
 
 const Nav = () => {

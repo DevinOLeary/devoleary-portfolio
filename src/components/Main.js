@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+
 
 
 
@@ -16,20 +16,12 @@ import Header from './Header';
 const Main = withRouter(({location}) => (
   <div>
     {location.pathname !== "/" && <Header/>}
-    <TransitionGroup>
-      <CSSTransition
-        key={location.key}
-        classNames="fade"
-        timeout={500}
-        >
-          <Switch location={location}>
-              <Route path="/" exact component={HomePage}/>
-              <Route path="/photography" component={Photography}/>
-              <Route path="/dev&design" component={DevAndDesign}/>
-              <Route path="/about" component={AboutMe}/>
-          </Switch>
-      </CSSTransition>
-    </TransitionGroup>
+      <Switch location={location}>
+          <Route path="/" exact component={HomePage}/>
+          <Route path="/photography" component={Photography}/>
+          <Route path="/dev&design" component={DevAndDesign}/>
+          <Route path="/about" component={AboutMe}/>
+      </Switch>
     {location.pathname !== "/" && <Footer />}
   </div>
 ));

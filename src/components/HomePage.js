@@ -17,7 +17,7 @@ function titleFadeIn(){
 function firstBoxDrawAnimation(){
   let tl = new TimelineLite();
   TweenLite.set("#box", {visibility: "visible"})
-    return tl.fromTo(".l1", 1, {height:0}, {height:243, ease:"Power1.easeIn", delay: .5})
+    return tl.fromTo(".l1", 1, {height:0}, {height:238, ease:"Power1.easeIn", delay: .5})
     .fromTo(".l4", 3, {width:0}, {width:'150%',ease: "Power1.easeOut"})
 
 };
@@ -63,7 +63,7 @@ class HomePage extends React.Component {
                 <span className="l3"></span>
                 <span className="l4"></span>
                 <h1 id="titleName">Devin O&#8217;Leary</h1>
-                <h4 id="titleQuote">Mindful Creations</h4>
+                <h4 id="titleQuote">creating authentic solutions for the web</h4>
               </div>
             </hgroup>
             <Nav />

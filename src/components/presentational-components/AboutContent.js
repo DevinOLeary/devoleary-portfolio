@@ -1,5 +1,5 @@
 import React from 'react';
-import {TransitionGroup} from 'react-transition-group';
+
 
 //components
 import TimelineHeader from './TimelineHeader';
@@ -19,10 +19,9 @@ const AboutContent = (props) => {
               <TimelineHeader {...props} loadTime={props.loadTime}/>
               <div className="flex-container center column">
                   {props.timelineInfo.length > 0 &&
-                    <TransitionGroup>
-                    {props.active.length > 0 ? <TimelineContent active={props.active[0]}/>
+                  props.active.length > 0 ? <TimelineContent active={props.active[0]}/>
                     :
-                    <ContentFadeIn>
+
                       <article className="content-body_read">
                         <h2 className="text-center">#lifegoals</h2>
 
@@ -42,9 +41,6 @@ const AboutContent = (props) => {
                         <h3>I am an essentialist,</h3>
                         <p>filling my life with next level experiences, meaningful relationships, and passionate work, whatever it may be. Life is too short to not live exceptionally.</p>
                       </article>
-                    </ContentFadeIn>
-                    }
-                    </TransitionGroup>
                 }
               </div>
             </div>
