@@ -4,6 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 
 
+
 //components
 import Photography from './Photography';
 import HomePage from './HomePage';
@@ -13,26 +14,25 @@ import Footer from './Footer';
 import Header from './Header';
 
 
-const Main = withRouter(({location}) => (
-  <div>
-    {location.pathname !== "/" && <Header/>}
-    <TransitionGroup>
-      <CSSTransition
-        key={location.key}
-        classNames="fade"
-        timeout={500}
-        >
+const Main = ({location}) => {
+  const currentKey = location.pathname.split('/')[1] || '/'
+  return (
+    <div>
+      {location.pathname !== "/" && <Header location={location}/>}
+      <TransitionGroup>
+        <CSSTransition key={currentKey} classNames="fade" timeout={1500}>
           <Switch location={location}>
-              <Route path="/" exact component={HomePage}/>
-              <Route path="/photography" component={Photography}/>
-              <Route path="/dev&design" component={DevAndDesign}/>
-              <Route path="/about" component={AboutMe}/>
+            <Route path="/" exact component={HomePage}/>
+            <Route path="/photography" component={Photography}/>
+            <Route path="/dev&design" component={DevAndDesign}/>
+            <Route path="/about" component={AboutMe}/>
           </Switch>
-      </CSSTransition>
-    </TransitionGroup>
-    {location.pathname !== "/" && <Footer />}
-  </div>
-));
+        </CSSTransition>
+      </TransitionGroup>
+      {location.pathname !== "/" && <Footer location={location}/>}
+    </div>
+  );
+};
 
 
 
@@ -41,4 +41,4 @@ const Main = withRouter(({location}) => (
 
 
 
-export default Main;
+export default withRouter(Main);

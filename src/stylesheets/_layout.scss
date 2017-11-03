@@ -98,6 +98,12 @@ h1,h2,h3,h4,h5 {
   right: 0;
 }
 
+.project_preview-container {
+  width: 50%;
+  min-width: 300px;
+  max-height: 275px;
+  overflow-y: scroll;
+}
 
 //elements
 
@@ -114,6 +120,7 @@ h1,h2,h3,h4,h5 {
   bottom:30vh;
   transform: rotateZ(270deg);
   height: 10px;
+  z-index: 1000;
   aside{
     width: 50vh;
     position: absolute;

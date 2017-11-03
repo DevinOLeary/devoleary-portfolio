@@ -2,7 +2,6 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 
 //components
-import ContentFadeIn from './small-components/ContentFadeIn';
 import AboutContent from './presentational-components/AboutContent';
 
 
@@ -15,7 +14,6 @@ class AboutMe extends React.Component {
   componentWillMount(){
     this.props.store.aboutMeStore.loadAbout();
   }
-
 
 
   //set timePeriodId to the clicked id
@@ -36,9 +34,7 @@ class AboutMe extends React.Component {
           <h2>a little about myself</h2>
         </hgroup>
         <br/>
-        <ContentFadeIn in={!loading}>
-          <AboutContent {...props} loadTime={this.loadTime}/>
-        </ContentFadeIn>
+        <AboutContent {...props} loadTime={this.loadTime}/>
       </div>
     );
   }

@@ -37,8 +37,8 @@ class Header extends React.Component{
 
   render(){
     const coloredUnderline = {
-      backgroundColor: `rgba(223,171,28,1)`,
-      borderColor: `rgba(223,171,28,1)`
+      backgroundColor: `#7A423C`,
+      borderColor: `#7A423C`
     }
     if(!this.state.fullSize){
       return(

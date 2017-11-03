@@ -2,8 +2,12 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 
 //components
-import ProjectContainer from './presentational-components/ProjectContainer';
+import ProjectPageContent from './presentational-components/ProjectPageContent';
 import ContentFadeIn from './small-components/ContentFadeIn';
+import animations from './small-components/animations';
+
+
+
 
 @inject('store')
 @observer
@@ -11,11 +15,10 @@ class DevAndDesign extends React.Component {
 
   componentWillMount(){
     this.props.store.projectStore.loadProjects()
-
   }
 
   componentDidMount(){
-    this.props.store.projectStore.activeProject = ''
+    this.props.store.projectStore.activeProject = '';
   }
 
   updateCategoryList = (category) => {
@@ -25,9 +28,15 @@ class DevAndDesign extends React.Component {
   isOpen = (id) => {
     this.props.store.projectStore.activeProject = id.toString();
   };
+
   closeProject = () => {
-    this.props.store.projectStore.activeProject = '';
+    let boxItem = document.getElementById('boxItem');
+    animations.fadeOut(boxItem);
+    setTimeout(()=> {
+      this.props.store.projectStore.activeProject = '';
+    },1000)
   }
+
 
   render() {
     const {projectInfo, activeProject, loading, filteredProjects, activeCategory} = this.props.store.projectStore;
@@ -46,7 +55,7 @@ class DevAndDesign extends React.Component {
           <br/>
         </hgroup>
         <ContentFadeIn in={!loading}>
-          <ProjectContainer {...props} closeProject={this.closeProject} isOpen={this.isOpen} updateCategoryList={this.updateCategoryList}/>
+          <ProjectPageContent {...props} closeProject={this.closeProject} isOpen={this.isOpen} updateCategoryList={this.updateCategoryList}/>
         </ContentFadeIn>
       </main>
 

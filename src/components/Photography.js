@@ -5,7 +5,7 @@ import {Route, Switch} from 'react-router-dom';
 //components
 import PhotoCategories from './presentational-components/PhotoCategories';
 import PhotoGallery from './PhotoGallery';
-import ContentFadeIn from './small-components/ContentFadeIn';
+
 
 
 @inject('store')
@@ -22,17 +22,13 @@ class Photography extends React.Component{
 
 
   render(){
-    const {picInfo, page, picSort, loading} = this.props.store.photographyStore;
-    const props = {picInfo, page, loading, picSort};
     return(
       <div className="body-container">
-      <ContentFadeIn in={!loading}>
-      <Switch>
-        <Route exact path="/photography" component={PhotoCategories}/>
-        <Route path="/photography/category_action" exact render={props => <PhotoGallery title="Action" {...props} />}/>
-        <Route path="/photography/category_travel" exact render={props => <PhotoGallery title="Travel" {...props} />}/>
-      </Switch>
-      </ContentFadeIn>
+        <Switch>
+          <Route path="/photography" exact render={props => <PhotoCategories/>} />
+          <Route path="/photography/category_action" exact render={(props) => <PhotoGallery title="Action" />}/>
+          <Route path="/photography/category_travel" exact render={(props) => <PhotoGallery title="Travel" />}/>
+        </Switch>
       </div>
     );
   }

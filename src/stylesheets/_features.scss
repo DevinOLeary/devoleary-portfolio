@@ -64,8 +64,9 @@
 }
 .display-box{
   height: auto;
-  width: 60%;
+  width: 80%;
   min-width: 350px;
+  max-width: 800px;
   background-color: $background-white;
   box-shadow: 0px 0px 5px;
   padding: 3%;
@@ -143,8 +144,12 @@
   margin-top: 10vw;
   box-shadow: 0px 0px 5px;
   align-self: flex-end;
+  opacity: 0;
 }
 
+.header-pic-category {
+  opacity: 0;
+}
 .img-full_banner {
   position: absolute;
   top: 0;
@@ -154,6 +159,7 @@
   height: 100%;
   width: 100%;
   z-index:0;
+  transition: 0.5s;
   object-fit: cover;
 }
 .overlay-home_banner {
@@ -184,10 +190,13 @@
 .project_list_img-overlay:hover{
   opacity:1;
 }
+.project-list-items {
+  opacity: 0;
+}
 .title-box{
 display: block;
 width: 50%;
-height: 200px;
+height: 250px;
 position: relative;
   .l1,.l2,.l3,.l4 {
   position: absolute;
@@ -199,22 +208,26 @@ position: relative;
   }
   .l1 {
   left: 0;
-  top: 7px;
+  top: 12px;
   height: 200px;
-  width: 7px;
+  width: 12px;
 }
 
 .l2 {
   top: 0;
   left: 0;
   width: 200px;
-  height: 7px;
+  height: 12px;
 }
 
 .l4 {
   bottom: 0;
-  left: 7px;
+  left: 12px;
   width: 200px;
-  height: 7px;
+  height: 12px;
 }
+}
+#titleName, #titleQuote {
+  opacity: 0;
+  margin-left: 20%;
 }

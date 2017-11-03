@@ -1,8 +1,8 @@
 import React from 'react';
 
 const coloredUnderline = {
-  backgroundColor: `rgba(223,171,28,1)`,
-  borderColor: `rgba(223,171,28,1)`
+  backgroundColor: `#872341`,
+  borderColor: `#872341`
 }
 const CategoryHeader = (props) => {
   return (

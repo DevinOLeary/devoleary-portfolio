@@ -5,14 +5,19 @@ import {observer, inject} from 'mobx-react';
 //components
 import PicCategory from './PicCategory';
 import LoadingPane from '../small-components/LoadingPane';
+import animations from '../small-components/animations';
 
 @inject('store')
 @observer
 class PhotoCategories extends React.Component {
-  render(){
-    let loading = this.props.store.photographyStore.loading;
+
+  loaded(e){
+    animations.fadeIn(e.target);
+  }
+
+  render(props){
+    const {picInfo, loading} = this.props.store.photographyStore;
     if(loading === true){ return <LoadingPane/>}else {
-      let picInfo = this.props.store.photographyStore.picInfo;
       const action = picInfo.find(pic => {
         return pic.acf.photo_category === 'action';
       });
@@ -24,17 +29,17 @@ class PhotoCategories extends React.Component {
       const actionImage = action._embedded['wp:featuredmedia']["0"].source_url;
       const travelImage = travel._embedded['wp:featuredmedia']["0"].source_url;
       return (
-        <section className="body-container">
+        <section>
           <div className="triangle-left"></div>
           <div className="flex-container row even-spacing">
             <div className="text-center header-pic_category">
               <NavLink to="/photography/category_action">
-                <PicCategory image={actionImage} title="Action"/>
+                <PicCategory image={actionImage} title="Action" loaded={this.loaded}/>
               </NavLink>
             </div>
             <div className="text-center header-pic_category">
               <NavLink to="/photography/category_travel">
-                <PicCategory image={travelImage} title="Travel"/>
+                <PicCategory image={travelImage} title="Travel" loaded={this.loaded}/>
               </NavLink>
             </div>
           </div>
