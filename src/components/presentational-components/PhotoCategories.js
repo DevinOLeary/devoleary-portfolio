@@ -10,9 +10,9 @@ import LoadingPane from '../small-components/LoadingPane';
 @observer
 class PhotoCategories extends React.Component {
   render(props){
-    let loading = this.props.store.photographyStore.loading;
+    let loading = this.props.loading;
     if(loading === true){ return <LoadingPane/>}else {
-      let picInfo = this.props.store.photographyStore.picInfo;
+      let picInfo = this.props.picInfo;
       const action = picInfo.find(pic => {
         return pic.acf.photo_category === 'action';
       });

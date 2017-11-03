@@ -36,7 +36,7 @@ class PhotoGallery extends React.Component {
   }
 
 
-  render(){
+  render(props){
     const {picSort, locationMap} = this.props.store.photographyStore;
     if(locationMap.size === 0){
       return null;
@@ -61,7 +61,6 @@ class PhotoGallery extends React.Component {
     locationMap.forEach(function(value, key){
       return menuMap.push(key);
     });
-    const loading = this.props.store.photographyStore.loading;
     return(
       <div>
         <main className="body-container">
@@ -75,7 +74,7 @@ class PhotoGallery extends React.Component {
                 {list}
               </ul>
             </section>
-          
+
           </div>
         </main>
         <div className="flex-container center mini-block">
