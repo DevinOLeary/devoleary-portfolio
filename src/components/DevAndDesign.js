@@ -4,6 +4,7 @@ import {inject, observer} from 'mobx-react';
 //components
 import ProjectPageContent from './presentational-components/ProjectPageContent';
 import ContentFadeIn from './small-components/ContentFadeIn';
+import animations from './small-components/animations';
 
 
 
@@ -29,7 +30,11 @@ class DevAndDesign extends React.Component {
   };
 
   closeProject = () => {
-    this.props.store.projectStore.activeProject = '';
+    let boxItem = document.getElementById('boxItem');
+    animations.fadeOut(boxItem);
+    setTimeout(()=> {
+      this.props.store.projectStore.activeProject = '';
+    },1000)
   }
 
 

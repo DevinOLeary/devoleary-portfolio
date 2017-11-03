@@ -1,18 +1,13 @@
 import React from 'react';
+import animations from '../small-components/animations';
 
 
 
 
 class HeadShot extends React.Component {
-  constructor(props){
-    super(props);
-    this.state= {
-      pic:{opacity: 0}
-    }
-  }
 
-  loadPic(){
-    this.setState({pic: {opacity: 1}});
+  loadPic(e){
+    animations.fadeIn(e.target);
   }
   render(props){
     const headshot = this.props.aboutInfo.find(info => (
@@ -21,7 +16,7 @@ class HeadShot extends React.Component {
     return(
       <img src={headshot._embedded['wp:featuredmedia']["0"].source_url}
       alt={headshot.acf.category}
-      className="headshot" style={this.state.pic} onLoad={this.loadPic.bind(this)}/>
+      className="headshot" onLoad={this.loadPic.bind(this)}/>
     );
   }
 }

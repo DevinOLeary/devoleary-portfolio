@@ -12,7 +12,7 @@ const PicCategory = (props) => {
         <h2>{props.title}</h2>
         <hr className="link-underline" style={coloredUnderline}/>
       </hgroup>
-      <img className="img-categories" style={props.style} src={props.image} alt= {props.title} onLoad={props.loaded.bind(this)}/>
+      <img className="img-categories" src={props.image} alt= {props.title} onLoad={props.loaded.bind(this)}/>
     </div>
   );
 }

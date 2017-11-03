@@ -9,7 +9,7 @@ import LoadingPane from '../small-components/LoadingPane';
 function fadeInList(){
   let list = ".project-list-items";
   let tl = new TimelineLite();
-  return tl.staggerFromTo(list, 1.5, {opacity: 0, y: -50}, {  opacity: 1, y: 0, delay: .5}, 0.2);
+  return tl.staggerTo(list, 1.5,{opacity: 1, y: 20, delay: .5}, 0.2);
 }
 
 class ListItems extends React.Component {

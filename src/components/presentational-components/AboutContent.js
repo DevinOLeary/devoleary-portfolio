@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 //components
 import TimelineHeader from './TimelineHeader';
 import LoadingPane from '../small-components/LoadingPane';
@@ -17,6 +18,7 @@ const AboutContent = (props) => {
             <div className="flex-container center column ">
               <TimelineHeader {...props} loadTime={props.loadTime}/>
               <div className="flex-container center column">
+
                   {props.timelineInfo.length > 0 &&
                   props.active.length > 0 ? <TimelineContent active={props.active[0]}/>
                     :
@@ -39,6 +41,7 @@ const AboutContent = (props) => {
                         <p>filling my life with next level experiences, meaningful relationships, and passionate work, whatever it may be. Life is too short to not live exceptionally.</p>
                       </article>
                 }
+
               </div>
             </div>
               <HeadShot {...props}/>

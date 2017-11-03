@@ -34,9 +34,7 @@ class AboutMe extends React.Component {
           <h2>a little about myself</h2>
         </hgroup>
         <br/>
-
-          <AboutContent {...props} loadTime={this.loadTime}/>
-    
+        <AboutContent {...props} loadTime={this.loadTime}/>
       </div>
     );
   }

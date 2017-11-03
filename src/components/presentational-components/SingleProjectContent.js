@@ -1,16 +1,24 @@
 import React from 'react';
-import {CSSTransition} from 'react-transition-group';
 
-const SingleProjectContent = ({children,...props}) => (
+import animations from '../small-components/animations';
 
-    <CSSTransition {...props} classNames="open" timeout={1500}>
-      <div className="flex-container center column">
+class SingleProjectContent extends React.Component {
+
+  componentDidMount(){
+    let boxItem = document.getElementById('boxItem');
+    animations.fadeIn(boxItem);
+  }
+
+  render(){
+    return (
+      <div className="flex-container center column" id="boxItem">
         <section className="display-box flex-container center column">
-          {children}
+          <button onClick={this.props.closeProject.bind(this)} className="button-action text-inverse button-long"><h4>close</h4></button>
+          {this.props.children}
         </section>
       </div>
-    </CSSTransition>
-
-);
+    )
+  }
+}
 
 export default SingleProjectContent;
