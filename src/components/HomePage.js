@@ -8,8 +8,8 @@ import LoadingPane from './small-components/LoadingPane';
 
 function titleFadeIn(){
   return (
-    TweenLite.fromTo('#titleName', 1.5, {opacity: 0, y: 0},{opacity: 1, y: 40, delay: 1}),
-    TweenLite.fromTo('#titleQuote', 1.5, {opacity: 0, y: 0}, {opacity: 1, y: 50, delay: 1.3})
+    TweenLite.fromTo('#titleName', 1.5, {opacity: 0, y: 0},{opacity: 1, y: 40, delay: 1.5}),
+    TweenLite.fromTo('#titleQuote', 1.5, {opacity: 0, y: 0}, {opacity: 1, y: 50, delay: 2})
   );
 
 }
@@ -17,25 +17,26 @@ function titleFadeIn(){
 function firstBoxDrawAnimation(){
   let tl = new TimelineLite();
   TweenLite.set("#box", {visibility: "visible"})
-    return tl.fromTo(".l1", 1, {height:0}, {height:238, ease:"Power1.easeIn", delay: .5})
+    return tl.fromTo(".l1", 1, {height:0}, {height:238, ease:"Power1.easeIn", delay: .8})
     .fromTo(".l4", 3, {width:0}, {width:'150%',ease: "Power1.easeOut"})
 
 };
 function secondBoxDrawAnimation(){
   let tl = new TimelineLite();
-  return tl.fromTo(".l2", 4, {width:0}, {width:'150%', ease:"Power1.easeInOut" , delay: .5})
+  return tl.fromTo(".l2", 4, {width:0}, {width:'150%', ease:"Power1.easeInOut" , delay: .8})
 };
-
+@GSAP()
 class HomePage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      img: {opacity: 0}
     }
   }
 
   loaded(){
-    this.setState({loading: false});
+    this.setState({loading: false, img: {opacity: 1}});
     this.addAnimation(firstBoxDrawAnimation);
     this.addAnimation(secondBoxDrawAnimation);
     this.addAnimation(titleFadeIn);
@@ -46,7 +47,7 @@ class HomePage extends React.Component {
     if(isLoading){return (
       <div>
         <LoadingPane/>
-        <img src={bannerImage} alt="homepage" className="img-full_banner hidden" onLoad={this.loaded.bind(this)}/>
+        <img src={bannerImage} alt="homepage" className="img-full_banner" style={this.state.img} onLoad={this.loaded.bind(this)}/>
       </div>
     )
       }else{
@@ -74,4 +75,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default GSAP()(HomePage);
+export default HomePage;
