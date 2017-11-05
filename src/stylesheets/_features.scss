@@ -200,7 +200,7 @@ display: block;
 width: 50%;
 height: 250px;
 position: relative;
-  .l1,.l2,.l3,.l4 {
+  #l1,#l2,#l3 {
   position: absolute;
   background: transparent;
   width: 0px;
@@ -208,21 +208,21 @@ position: relative;
   /*give each border a background color of black in css so that you don't need to animate it*/
   background-color:$background-primary-trans;
   }
-  .l1 {
+  #l1 {
   left: 0;
   top: 12px;
   height: 200px;
   width: 12px;
 }
 
-.l2 {
+#l2 {
   top: 0;
   left: 0;
   width: 200px;
   height: 12px;
 }
 
-.l4 {
+#l3 {
   bottom: 0;
   left: 12px;
   width: 200px;
@@ -233,23 +233,10 @@ position: relative;
   opacity: 0;
   margin-left: 20%;
 }
-.slick-slider {
-  max-width: 500px;
-  height: 400px;
-  // .slick-list {
-  //   height: 100%;
-  //   .slick-track {
-  //     height: 100%;
-  //     .slick-slide {
-  //       height: 100%;
-  //     }
-  //   }
-  //
-  // }
+
   .img-project_preview {
     width:80%;
     height:auto;
     min-width: 300px;
     object-fit: cover;
   }
-}

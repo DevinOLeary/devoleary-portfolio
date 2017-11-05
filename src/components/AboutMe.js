@@ -3,6 +3,8 @@ import {inject, observer} from 'mobx-react';
 
 //components
 import AboutContent from './presentational-components/AboutContent';
+import animations from './small-components/animations';
+
 
 
 
@@ -20,6 +22,9 @@ class AboutMe extends React.Component {
   loadTime = (id) => {
     this.props.store.aboutMeStore.loadNewTimePeriod(id);
   }
+  loadPic = (e) => {
+    animations.fadeInDown(e.target);
+  }
 
   render() {
     const {aboutInfo, activeTimePeriod, loading, timePeriodId} = this.props.store.aboutMeStore;
@@ -34,7 +39,7 @@ class AboutMe extends React.Component {
           <h2>a little about myself</h2>
         </hgroup>
         <br/>
-        <AboutContent {...props} loadTime={this.loadTime}/>
+        <AboutContent {...props} loadTime={this.loadTime} loadPic={this.loadPic}/>
       </div>
     );
   }

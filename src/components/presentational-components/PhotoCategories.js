@@ -12,7 +12,7 @@ import animations from '../small-components/animations';
 class PhotoCategories extends React.Component {
 
   loaded(e){
-    animations.fadeIn(e.target);
+    animations.fadeInDown(e.target);
   }
 
   render(props){

@@ -4,7 +4,7 @@ import ProjectSlider from './ProjectSlider';
 
 
 const DesignProject = (props) => {
-  let acf = props.info.acf;
+  const {acf} = props.info;
   return(
     <div className="full-width">
       <h2 className="text-center">{acf.title}</h2>
@@ -14,16 +14,11 @@ const DesignProject = (props) => {
         </aside>
         <aside className="project_preview-slider flex-container center">
           <ProjectSlider>
-            <div><img src={acf.image_one.url} className="img-project_preview" alt={acf.title}/></div>
-
-            <div><img src={acf.image_one.url} className="img-project_preview" alt={acf.title}/></div>
-
-            <div><img src={acf.image_one.url} className="img-project_preview" alt={acf.title}/></div>
-
-            <div><img src={acf.image_one.url} className="img-project_preview" alt={acf.title}/></div>
-          
+            <div className="flex-container center"><img src={acf.image_one.url} className="img-project_preview" alt={acf.title}/></div>
+            <div className="flex-container center"><img src={acf.image_two.url} className="img-project_preview" alt={acf.title}/></div>
+            <div className="flex-container center"><img src={acf.image_three.url} className="img-project_preview" alt={acf.title}/></div>
+            <div className="flex-container center"><img src={acf.image_four.url} className="img-project_preview" alt={acf.title}/></div>
           </ProjectSlider>
-
         </aside>
       </section>
     </div>

@@ -35,19 +35,14 @@ button:hover {
   margin:10%;
 }
 
-.slick-prev, .slick-next {
-  z-index: 100;
-  transition: .2s;
+.left-button, .right-button {
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
 }
-.slick-prev:before, .slick-next:before {
-font-size: 20px;
-line-height: 1;
-color: #00558B;
-opacity: .75;
+.left-button {
+  left: -10px;
 }
-.slick-prev {
-  left: -20;
-}
-.slick-next {
-  right: -20;
+.right-button {
+  right: -10px;
 }

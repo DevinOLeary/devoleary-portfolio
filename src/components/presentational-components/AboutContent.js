@@ -44,7 +44,7 @@ const AboutContent = (props) => {
 
               </div>
             </div>
-              <HeadShot {...props}/>
+              <HeadShot {...props} loadPic={props.loadPic}/>
           </section>
           <section className="body-section ">
             <hgroup className="header-offset flex-container column">

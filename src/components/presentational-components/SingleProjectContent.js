@@ -6,7 +6,7 @@ class SingleProjectContent extends React.Component {
 
   componentDidMount(){
     let boxItem = document.getElementById('boxItem');
-    animations.fadeIn(boxItem);
+    animations.fadeInDown(boxItem);
   }
 
   render(){
