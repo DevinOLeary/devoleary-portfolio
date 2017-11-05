@@ -14,7 +14,7 @@ const ProjectList = (props) => {
         <ul className="flex-container row center full-width">
           <li className="project_cat-header"><CategoryHeader title='development' {...props} onClick={props.updateCategoryList}/></li>
           <li className="project_cat-header"><CategoryHeader title='design' {...props} onClick={props.updateCategoryList}/></li>
-          <li className="project_cat-header"  ><CategoryHeader title='all' {...props} onClick={props.updateCategoryList}/></li>
+          <li className="project_cat-header"><CategoryHeader title='all' {...props} onClick={props.updateCategoryList}/></li>
         </ul>
         <ul className='flex-container row center'>
           <ListItems {...props}/>

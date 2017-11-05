@@ -23,7 +23,7 @@ const ProjectWindowDirectory = (props) => {
     contentWindow = projectContent
   }
   return (
-    <div>
+    <div className="full-width">
       {contentWindow !== '' ?
       <SingleProjectContent {...props} closeProject={props.closeProject}>
         {contentWindow}

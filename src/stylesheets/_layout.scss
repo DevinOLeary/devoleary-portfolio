@@ -63,17 +63,6 @@ h1,h2,h3,h4,h5 {
   .text-center {
     text-align: center;
   }
-  .project_text-container {
-    position: absolute;
-    right: -50px;
-    bottom: -50px;
-    min-width: 60%;
-    height:70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
 .project_list_img-container {
   box-shadow: 0 0 3px;
   border-radius: 100%;
@@ -86,6 +75,16 @@ h1,h2,h3,h4,h5 {
   position: relative;
   margin: 20px;
 }
+.project_preview-description{
+  width: 25%;
+  min-width: 250px;
+  max-height: 275px;
+  overflow-y: scroll;
+}
+.project_preview-slider {
+  width: 70%;
+  min-height: 200px;
+}
   .open_content-container {
     width:80%;
     margin: 15vh 0;
@@ -96,13 +95,6 @@ h1,h2,h3,h4,h5 {
   position: absolute;
   bottom: 0;
   right: 0;
-}
-
-.project_preview-container {
-  width: 50%;
-  min-width: 300px;
-  max-height: 275px;
-  overflow-y: scroll;
 }
 
 //elements
