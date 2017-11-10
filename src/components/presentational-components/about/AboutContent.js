@@ -4,7 +4,7 @@ import React from 'react';
 
 //components
 import TimelineHeader from './TimelineHeader';
-import LoadingPane from '../small-components/LoadingPane';
+import LoadingPane from '../../small-components/LoadingPane';
 import TimelineContent from './TimelineContent';
 import HeadShot from './HeadShot';
 
@@ -44,7 +44,7 @@ const AboutContent = (props) => {
 
               </div>
             </div>
-              <HeadShot {...props}/>
+              <HeadShot {...props} loadPic={props.loadPic}/>
           </section>
           <section className="body-section ">
             <hgroup className="header-offset flex-container column">

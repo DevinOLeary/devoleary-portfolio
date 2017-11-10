@@ -4,7 +4,8 @@ import {observer,inject} from 'mobx-react';
 import {Element} from 'react-scroll';
 
 //components
-import SideMenu from './presentational-components/SideMenu';
+import SideMenu from './small-components/SideMenu';
+import animations from './small-components/animations';
 
 
 function imagesLoaded(parentNode) {
@@ -26,9 +27,10 @@ class PhotoGallery extends React.Component {
   }
 
 
-  handleImageLoad(){
+  handleImageLoad(e){
     const galleryElement = this.refs.gallery;
     this.props.store.photographyStore.loading = !imagesLoaded(galleryElement);
+    animations.fadeInDown(e.target);
   }
 
   getStyle(){

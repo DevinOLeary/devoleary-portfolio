@@ -4,7 +4,7 @@ import {Element} from 'react-scroll';
 //components
 import ProjectList from './ProjectList'
 import DesignSkills from './DesignSkills';
-import LoadingPane from '../small-components/LoadingPane';
+import LoadingPane from '../../small-components/LoadingPane';
 import ProjectWindowDirectory from './ProjectWindowDirectory';
 
 

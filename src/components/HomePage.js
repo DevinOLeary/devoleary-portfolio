@@ -1,30 +1,30 @@
 import React from 'react';
-import {TweenLite, TimelineLite} from 'gsap';
 import GSAP from 'react-gsap-enhancer';
+import {TweenLite, TimelineLite} from 'gsap';
 
 import Nav from './Nav';
 import bannerImage from '../images/home-banner.jpg';
 import LoadingPane from './small-components/LoadingPane';
 
-function titleFadeIn(){
-  return (
-    TweenLite.fromTo('#titleName', 1.5, {opacity: 0, y: 0},{opacity: 1, y: 40, delay: 1.5}),
-    TweenLite.fromTo('#titleQuote', 1.5, {opacity: 0, y: 0}, {opacity: 1, y: 50, delay: 2})
-  );
 
-}
 
+
+function nameFadeIn(){
+  return TweenLite.fromTo("#titleName", 1.5, {opacity: 0, y: 0},{opacity: 1, y: 40, delay: 1.5});
+};
+function quoteFadeIn(){
+  return TweenLite.fromTo("#titleQuote", 1.5, {opacity: 0, y: 0},{opacity: 1, y: 40, delay: 2});
+};
 function firstBoxDrawAnimation(){
   let tl = new TimelineLite();
-  TweenLite.set("#box", {visibility: "visible"})
-    return tl.fromTo(".l1", 1, {height:0}, {height:238, ease:"Power1.easeIn", delay: .8})
-    .fromTo(".l4", 3, {width:0}, {width:'150%',ease: "Power1.easeOut"})
-
+  return tl.fromTo("#l1", 1, {height:0}, {height:238, ease:"Power1.easeIn", delay: .8})
+    .fromTo("#l3", 3, {width:0}, {width:'150%', ease: "Power1.easeOut"});
 };
 function secondBoxDrawAnimation(){
   let tl = new TimelineLite();
-  return tl.fromTo(".l2", 4, {width:0}, {width:'150%', ease:"Power1.easeInOut" , delay: .8})
+  return tl.fromTo("#l2", 4, {width:0}, {width:'150%', ease:"Power1.easeInOut" , delay: .8});
 };
+
 @GSAP()
 class HomePage extends React.Component {
   constructor(props){
@@ -37,9 +37,10 @@ class HomePage extends React.Component {
 
   loaded(){
     this.setState({loading: false, img: {opacity: 1}});
+    this.addAnimation(nameFadeIn);
+    this.addAnimation(quoteFadeIn);
     this.addAnimation(firstBoxDrawAnimation);
     this.addAnimation(secondBoxDrawAnimation);
-    this.addAnimation(titleFadeIn);
     }
 
   render() {
@@ -59,10 +60,9 @@ class HomePage extends React.Component {
           <header className="flex-container column space-between homepage-container">
             <hgroup className="flex-container center column text-inverse">
               <div className="title-box">
-                <span className="l1"></span>
-                <span className="l2"></span>
-                <span className="l3"></span>
-                <span className="l4"></span>
+                <span id="l1"></span>
+                <span id="l2"></span>
+                <span id="l3"></span>
                 <h1 id="titleName">Devin O&#8217;Leary</h1>
                 <h4 id="titleQuote">creating authentic solutions for the web</h4>
               </div>

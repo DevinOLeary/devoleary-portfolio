@@ -3,7 +3,7 @@ import {TimelineLite} from 'gsap';
 import GSAP from 'react-gsap-enhancer';
 import {Link} from 'react-scroll';
 
-import LoadingPane from '../small-components/LoadingPane';
+import LoadingPane from '../../small-components/LoadingPane';
 
 
 function fadeInList(){

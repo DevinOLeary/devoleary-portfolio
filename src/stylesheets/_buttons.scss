@@ -34,3 +34,19 @@ button:hover {
   display: inline-block;
   margin:10%;
 }
+
+.left-button, .right-button {
+  position: absolute;
+  top: 30%;
+  font-size: 80px;
+  z-index: 200;
+}
+.left-button:hover, .right-button:hover{
+  cursor: pointer;
+}
+.left-button {
+  left: -50px;
+}
+.right-button {
+  right: -50px;
+}

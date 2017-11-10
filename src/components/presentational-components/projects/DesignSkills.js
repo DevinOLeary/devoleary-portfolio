@@ -1,7 +1,7 @@
 import React from 'react';
 
 //components
-import LoadingPane from '../small-components/LoadingPane';
+import LoadingPane from '../../small-components/LoadingPane';
 
 
 export const DesignSkills = (props) => {
