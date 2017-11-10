@@ -233,10 +233,13 @@ position: relative;
   opacity: 0;
   margin-left: 20%;
 }
-
   .img-project_preview {
-    width:80%;
     height:auto;
-    min-width: 300px;
+    width: 250px;
     object-fit: cover;
+  }
+  .project_preview-slider {
+    width: 70%;
+    min-height: 200px;
+    position: relative;
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import animations from '../small-components/animations';
+import animations from '../../small-components/animations';
 
 class SingleProjectContent extends React.Component {
 

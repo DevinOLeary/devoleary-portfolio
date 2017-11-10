@@ -2,7 +2,7 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 
 //components
-import ProjectPageContent from './presentational-components/ProjectPageContent';
+import ProjectPageContent from './presentational-components/projects/ProjectPageContent';
 import ContentFadeIn from './small-components/ContentFadeIn';
 import animations from './small-components/animations';
 

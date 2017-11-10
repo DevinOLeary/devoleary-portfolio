@@ -2,7 +2,7 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 
 //components
-import AboutContent from './presentational-components/AboutContent';
+import AboutContent from './presentational-components/about/AboutContent';
 import animations from './small-components/animations';
 
 

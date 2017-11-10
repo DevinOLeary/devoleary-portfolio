@@ -4,7 +4,7 @@ import React from 'react';
 
 //components
 import TimelineHeader from './TimelineHeader';
-import LoadingPane from '../small-components/LoadingPane';
+import LoadingPane from '../../small-components/LoadingPane';
 import TimelineContent from './TimelineContent';
 import HeadShot from './HeadShot';
 

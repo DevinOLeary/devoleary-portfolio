@@ -2,12 +2,12 @@ import React from 'react';
 
 export const LeftButton = (props) => {
   const {onClick} = props
-  return <button onClick={onClick} className="left-button">Prev</button>
+  return <span onClick={onClick} className="left-button">&#8249;</span>
 }
 
 export const RightButton = (props) => {
   const {onClick} = props
-  return <button onClick={onClick} className="right-button">Next</button>
+  return <span onClick={onClick} className="right-button">&#8250;</span>
 }
 
 export default {LeftButton, RightButton};

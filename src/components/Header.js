@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 
 //components
-import MobileMenu from './presentational-components/MobileMenu';
+import MobileMenu from './small-components/MobileMenu';
 
 class Header extends React.Component{
   constructor(props){
